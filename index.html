@@ -732,14 +732,334 @@
       </div>
     </section>
 
-    <!-- CUSTOMER PROFILES (placeholder) -->
+    <!-- CUSTOMER PROFILES -->
     <section id="customer-profiles">
       <h2>Customer Profiles</h2>
-      <p class="subtitle">Coming soon -- targeted group customer profiles, product gaps by persona, and win/loss patterns</p>
+      <p class="subtitle">5 ICP segments ranked by ease of close -- demographics, gaps, and what moves the needle</p>
 
-      <div class="card" style="text-align: center; padding: 48px; color: var(--text-muted);">
-        <p style="font-size: 36px; margin-bottom: 16px;">&#128736;</p>
-        <p>This section will include customer profile segmentation, feature needs by persona, and tailored sales playbooks.</p>
+      <!-- Overview bar chart -->
+      <div class="card" style="margin-bottom: 24px;">
+        <h3 style="margin-bottom: 20px; font-size: 16px;">Close Rate by Segment</h3>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+              <span>1. Small Clinics</span><span style="color: var(--green); font-weight: 600;">60%</span>
+            </div>
+            <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden;">
+              <div style="width: 60%; height: 100%; background: var(--green); border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 11px; font-weight: 600; color: #0f1117;">Inbound-driven, ≤5 clinicians</div>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+              <span>2. Large AT Departments</span><span style="color: var(--yellow); font-weight: 600;">40%</span>
+            </div>
+            <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden;">
+              <div style="width: 40%; height: 100%; background: var(--yellow); border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 11px; font-weight: 600; color: #0f1117;">Avg 15 people</div>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+              <span>3. Large PT Chains (multi-clinic)</span><span style="color: var(--orange); font-weight: 600;">25%</span>
+            </div>
+            <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden;">
+              <div style="width: 25%; height: 100%; background: var(--orange); border-radius: 6px;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+              <span>4. Enterprise Hospital Systems</span><span style="color: var(--red); font-weight: 600;">0%</span>
+            </div>
+            <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden;">
+              <div style="width: 2%; height: 100%; background: var(--red); border-radius: 6px;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+              <span>5. Schools (DPT, MSAT, PTA)</span><span style="color: var(--red); font-weight: 600;">0%</span>
+            </div>
+            <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden;">
+              <div style="width: 2%; height: 100%; background: var(--red); border-radius: 6px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GROUP 1: Small Clinics -->
+      <div class="card" style="margin-bottom: 20px; border-left: 3px solid var(--green);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h3 style="font-size: 16px;">Group 1: Small Outpatient & Sports PT/AT Clinics</h3>
+          <span style="background: var(--green); color: #0f1117; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">60% Close</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">≤5 clinicians, primarily inbound. Easiest to close -- this is where we generate cash now.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div>
+            <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Product Gaps</h4>
+            <ul style="padding-left: 16px; font-size: 14px; color: var(--text-muted);">
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Missing videos</strong> -- used to platforms that have everything</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">YT video links / photos</strong> -- workaround for missing content</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Custom video filming</strong> -- us filming for them is a bigger value-add than uploading</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">No EMR integration</strong> -- recently changed EMR or about to invest in one</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Close Rate Impact If Fixed</h4>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Groups / Patients Tab</span><span style="color: var(--green);">+15%</span></div>
+                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 15%; height: 100%; background: var(--green); border-radius: 4px;"></div></div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Videos / Content</span><span style="color: var(--green);">+15%</span></div>
+                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 15%; height: 100%; background: var(--green); border-radius: 4px;"></div></div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>EMR Integration</span><span style="color: var(--yellow);">+10%</span></div>
+                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 10%; height: 100%; background: var(--yellow); border-radius: 4px;"></div></div>
+              </div>
+            </div>
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">Potential close rate if all fixed: <strong style="color: var(--green);">~100%</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GROUP 2: Large AT Departments -->
+      <div class="card" style="margin-bottom: 20px; border-left: 3px solid var(--yellow);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h3 style="font-size: 16px;">Group 2: Large College/University AT Departments</h3>
+          <span style="background: var(--yellow); color: #0f1117; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">40% Close</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">Athletic training departments at colleges and universities. Avg group size: 15 people.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div>
+            <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Product Gaps</h4>
+            <ul style="padding-left: 16px; font-size: 14px; color: var(--text-muted);">
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">AMS integration</strong> -- need to connect with athletic management systems</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Custom branding</strong> -- white-label or program-branded experience</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Custom video uploads</strong> -- upload their own exercise content</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Close Rate Impact If Fixed</h4>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Groups / Patients Tab</span><span style="color: var(--green);">+20%</span></div>
+                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 20%; height: 100%; background: var(--green); border-radius: 4px;"></div></div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>AMS Integration</span><span style="color: var(--green);">+20%</span></div>
+                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 20%; height: 100%; background: var(--green); border-radius: 4px;"></div></div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Custom Branding</span><span style="color: var(--yellow);">+10%</span></div>
+                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 10%; height: 100%; background: var(--yellow); border-radius: 4px;"></div></div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Video Uploads</span><span style="color: var(--yellow);">+10%</span></div>
+                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 10%; height: 100%; background: var(--yellow); border-radius: 4px;"></div></div>
+              </div>
+            </div>
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">Potential close rate if all fixed: <strong style="color: var(--green);">~100%</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GROUP 3: Large PT Chains -->
+      <div class="card" style="margin-bottom: 20px; border-left: 3px solid var(--orange);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h3 style="font-size: 16px;">Group 3: Large PT Chains (Multi-Clinic)</h3>
+          <span style="background: var(--orange); color: #0f1117; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">25% Close</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">Multi-location physical therapy chains. Similar to enterprise hospital but video/templates matter more. More accessible than hospital systems.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div>
+            <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Product Gaps</h4>
+            <ul style="padding-left: 16px; font-size: 14px; color: var(--text-muted);">
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">EMR integration</strong> -- embedded in existing clinical systems</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">CEUs</strong> -- continuing education credits for staff</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Custom videos</strong> -- need to upload their own content</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Shared patients / templates</strong> -- team collaboration features</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Close Rate Impact If Fixed</h4>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>EMR Integration</span><span style="color: var(--green);">+50%</span></div>
+                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 50%; height: 100%; background: var(--green); border-radius: 4px;"></div></div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>CEUs</span><span style="color: var(--green);">+20%</span></div>
+                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 20%; height: 100%; background: var(--green); border-radius: 4px;"></div></div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Custom Videos</span><span style="color: var(--green);">+20%</span></div>
+                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 20%; height: 100%; background: var(--green); border-radius: 4px;"></div></div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Patients / Templates</span><span style="color: var(--yellow);">+15%</span></div>
+                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 15%; height: 100%; background: var(--yellow); border-radius: 4px;"></div></div>
+              </div>
+            </div>
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">Potential close rate if all fixed: <strong style="color: var(--green);">~100%+</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GROUP 4: Enterprise Hospital Systems -->
+      <div class="card" style="margin-bottom: 20px; border-left: 3px solid var(--red);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h3 style="font-size: 16px;">Group 4: Enterprise Hospital Systems</h3>
+          <span style="background: var(--red); color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">0% Close</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">Hundreds of PTs, deeply embedded in Medbridge and Epic -- even when their ortho/sports departments don't use Medbridge at all.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div>
+            <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Product Gaps</h4>
+            <ul style="padding-left: 16px; font-size: 14px; color: var(--text-muted);">
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Epic integration</strong> -- institutional mandate, non-negotiable</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">CEUs</strong> -- continuing education is a procurement checkbox</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Custom videos</strong> -- need to upload their own content at scale</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Close Rate Impact If Fixed</h4>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Epic Integration</span><span style="color: var(--green);">+50%</span></div>
+                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 50%; height: 100%; background: var(--green); border-radius: 4px;"></div></div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>CEUs</span><span style="color: var(--green);">+25%</span></div>
+                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 25%; height: 100%; background: var(--green); border-radius: 4px;"></div></div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Custom Videos</span><span style="color: var(--green);">+20%</span></div>
+                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 20%; height: 100%; background: var(--green); border-radius: 4px;"></div></div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Groups / Patients Tab</span><span style="color: var(--yellow);">+15%</span></div>
+                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 15%; height: 100%; background: var(--yellow); border-radius: 4px;"></div></div>
+              </div>
+            </div>
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">Potential close rate if all fixed: <strong style="color: var(--yellow);">~90%+</strong> (procurement complexity remains)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GROUP 5: Schools -->
+      <div class="card" style="margin-bottom: 20px; border-left: 3px solid var(--red);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h3 style="font-size: 16px;">Group 5: Schools (DPT, MSAT, PTA Programs)</h3>
+          <span style="background: var(--red); color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">0% Close</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">Extremely long sales cycle. High potential and clear need, but budget/fiscal year/proof-of-concept barriers are outside our control.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div>
+            <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Product Gaps</h4>
+            <ul style="padding-left: 16px; font-size: 14px; color: var(--text-muted);">
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Content only ortho/sports</strong> -- no peds, neuro, cardiopulm</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Custom content uploads</strong> -- faculty want to upload their own; they all teach differently</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Upload own > request an exercise</strong> -- requesting is too slow for academic workflows</li>
+            </ul>
+            <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--red); margin-top: 16px; margin-bottom: 8px;">Outside Our Control</h4>
+            <ul style="padding-left: 16px; font-size: 14px; color: var(--text-muted);">
+              <li style="margin-bottom: 6px;">Proof of concept & implementation strategy</li>
+              <li style="margin-bottom: 6px;">Fiscal year -- long budget cycles</li>
+              <li style="margin-bottom: 6px;">Budget allocation decisions</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Close Rate Impact If Fixed</h4>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Custom Content Uploads</span><span style="color: var(--text-muted);">TBD</span></div>
+                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 0%; height: 100%; background: var(--accent); border-radius: 4px;"></div></div>
+              </div>
+            </div>
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">Impact percentages pending -- Craig to provide</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cross-cutting product gaps -->
+      <div class="card" style="border-left: 3px solid var(--accent);">
+        <h3 style="font-size: 16px; margin-bottom: 16px;">Cross-Cutting Product Gaps</h3>
+        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">Features that unlock multiple segments simultaneously -- highest ROI for product investment.</p>
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+          <thead>
+            <tr style="border-bottom: 1px solid var(--border); text-align: left;">
+              <th style="padding: 10px 12px; color: var(--text-muted); font-weight: 500;">Feature</th>
+              <th style="padding: 10px 8px; text-align: center; font-size: 11px;">G1<br>Clinics</th>
+              <th style="padding: 10px 8px; text-align: center; font-size: 11px;">G2<br>AT Depts</th>
+              <th style="padding: 10px 8px; text-align: center; font-size: 11px;">G3<br>PT Chains</th>
+              <th style="padding: 10px 8px; text-align: center; font-size: 11px;">G4<br>Hospital</th>
+              <th style="padding: 10px 8px; text-align: center; font-size: 11px;">G5<br>Schools</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 10px 12px;">Custom Video Uploads</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+15%</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+10%</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+20%</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+20%</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--accent);">Key</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 10px 12px;">Groups / Patients Tab</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+15%</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+20%</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--yellow);">+15%</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--yellow);">+15%</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 10px 12px;">EMR / Epic / AMS Integration</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--yellow);">+10%</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+20%</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+50%</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+50%</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 10px 12px;">CEUs</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+20%</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+25%</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 10px 12px;">Custom Branding</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--yellow);">+10%</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 10px 12px;">Shared Patients / Templates</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--yellow);">+15%</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 12px;">Content Breadth (beyond ortho/sports)</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 8px; text-align: center; color: var(--accent);">Key</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
