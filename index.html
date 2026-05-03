@@ -737,13 +737,41 @@
       <h2>Customer Profiles</h2>
       <p class="subtitle">6 ICP segments ranked by ease of close -- demographics, gaps, deal pipeline from HubSpot (133 new business deals)</p>
 
+      <style>
+        .seg-toggle { cursor: pointer; user-select: none; }
+        .seg-toggle:hover { opacity: 0.85; }
+        .seg-deals { display: none; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
+        .seg-deals.open { display: block; }
+        .seg-arrow { display: inline-block; transition: transform 0.2s; margin-right: 6px; font-size: 11px; }
+        .seg-arrow.open { transform: rotate(90deg); }
+        .deal-sub { margin-bottom: 16px; }
+        .deal-sub-toggle { cursor: pointer; user-select: none; display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 8px; transition: background 0.15s; }
+        .deal-sub-toggle:hover { background: var(--card-hover); }
+        .deal-sub-arrow { display: inline-block; transition: transform 0.2s; font-size: 10px; color: var(--text-muted); }
+        .deal-sub-arrow.open { transform: rotate(90deg); }
+        .deal-sub-label { font-size: 13px; font-weight: 600; }
+        .deal-sub-meta { font-size: 12px; color: var(--text-muted); }
+        .deal-sub-list { display: none; margin: 4px 0 0 28px; padding: 0; list-style: none; }
+        .deal-sub-list.open { display: block; }
+        .deal-sub-list li { padding: 5px 0; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.03); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .deal-sub-list li:last-child { border-bottom: none; }
+        .deal-bullet-seats { min-width: 60px; font-weight: 600; color: var(--accent); font-size: 12px; }
+        .deal-bullet-name { flex: 1; min-width: 150px; }
+        .deal-bullet-amt { color: var(--text-muted); font-size: 12px; min-width: 60px; text-align: right; }
+        .gap-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+        .gap-label { font-size: 12px; min-width: 160px; }
+        .gap-bar-track { flex: 1; background: var(--border); border-radius: 4px; height: 8px; }
+        .gap-bar-fill { height: 100%; border-radius: 4px; }
+        .gap-pct { font-size: 12px; min-width: 40px; text-align: right; font-weight: 600; }
+      </style>
+
       <div class="card" style="margin-bottom: 24px;">
         <h3 style="margin-bottom: 6px; font-size: 16px;">Close Rate by Segment</h3>
         <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 18px;">Mike's estimate vs actual HubSpot data (all-time new business)</p>
         <div style="display: flex; flex-direction: column; gap: 14px;">
           <div>
             <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
-              <span>1. Small Clinics &amp; ATC (&le;5)</span>
+              <span>1. Small Clinics &amp; ATC (&le;5 seats)</span>
               <span><span style="color: var(--text-muted); font-size: 11px;">Mike: 60%</span> &nbsp;<span style="color: var(--green); font-weight: 600;">Actual: 76%</span></span>
             </div>
             <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden; position: relative;">
@@ -753,7 +781,7 @@
           </div>
           <div>
             <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
-              <span>2. Medium Clinics &amp; ATC (6-10)</span>
+              <span>2. Medium Clinics &amp; ATC (6-10 seats)</span>
               <span><span style="color: var(--accent); font-size: 11px;">New segment</span> &nbsp;<span style="color: var(--green); font-weight: 600;">Actual: 80%</span></span>
             </div>
             <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden; position: relative;">
@@ -762,40 +790,39 @@
           </div>
           <div>
             <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
-              <span>3. Large AT Departments (&gt;10)</span>
-              <span><span style="color: var(--text-muted); font-size: 11px;">Mike: 40%</span> &nbsp;<span style="color: var(--yellow); font-weight: 600;">Actual: 50%*</span></span>
+              <span>3. Large AT Departments (&gt;10 seats)</span>
+              <span><span style="color: var(--text-muted); font-size: 11px;">Mike: 40%</span> &nbsp;<span style="color: var(--yellow); font-weight: 600;">Actual: 0%*</span></span>
             </div>
-            <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden; position: relative;">
-              <div style="width: 40%; height: 100%; background: rgba(255,255,255,0.08); border-radius: 6px; position: absolute;"></div>
-              <div style="width: 50%; height: 100%; background: var(--yellow); border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 11px; font-weight: 600; color: #0f1117; position: relative;">1W / 1L / 7 open</div>
+            <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden;">
+              <div style="width: 100%; height: 100%; display: flex; align-items: center; padding-left: 10px; font-size: 11px; color: var(--text-muted);">0W / 1L / 7 open</div>
             </div>
           </div>
           <div>
             <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
-              <span>4. Large PT Chains (&gt;10)</span>
-              <span><span style="color: var(--text-muted); font-size: 11px;">Mike: 25%</span> &nbsp;<span style="color: var(--orange); font-weight: 600;">Actual: 38%</span></span>
+              <span>4. Large PT Chains (&gt;10 seats)</span>
+              <span><span style="color: var(--text-muted); font-size: 11px;">Mike: 25%</span> &nbsp;<span style="color: var(--yellow); font-weight: 600;">Actual: 50%</span></span>
             </div>
             <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden; position: relative;">
               <div style="width: 25%; height: 100%; background: rgba(255,255,255,0.08); border-radius: 6px; position: absolute;"></div>
-              <div style="width: 38%; height: 100%; background: var(--orange); border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 11px; font-weight: 600; color: #0f1117; position: relative;">3W / 5L / 5 open</div>
+              <div style="width: 50%; height: 100%; background: var(--yellow); border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 11px; font-weight: 600; color: #0f1117; position: relative;">3W / 3L / 5 open</div>
             </div>
           </div>
           <div>
             <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
-              <span>5. Enterprise Hospital</span>
-              <span><span style="color: var(--text-muted); font-size: 11px;">Mike: 0%</span> &nbsp;<span style="color: var(--red); font-weight: 600;">Actual: N/A</span></span>
+              <span>5. Enterprise Hospital Systems</span>
+              <span><span style="color: var(--text-muted); font-size: 11px;">Mike: 0%</span> &nbsp;<span style="color: var(--red); font-weight: 600;">Actual: 0%*</span></span>
             </div>
             <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden;">
-              <div style="width: 100%; height: 100%; display: flex; align-items: center; padding-left: 10px; font-size: 11px; color: var(--text-muted);">0W / 0L / 4 open</div>
+              <div style="width: 100%; height: 100%; display: flex; align-items: center; padding-left: 10px; font-size: 11px; color: var(--text-muted);">0W / 2L / 4 open</div>
             </div>
           </div>
           <div>
             <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
-              <span>6. Schools (DPT, MSAT, PTA)</span>
-              <span><span style="color: var(--text-muted); font-size: 11px;">Mike: 0%</span> &nbsp;<span style="color: var(--red); font-weight: 600;">Actual: 0%</span></span>
+              <span>6. Schools (DPT, MSAT, PTA, K-12)</span>
+              <span><span style="color: var(--text-muted); font-size: 11px;">Mike: 0%</span> &nbsp;<span style="color: var(--yellow); font-weight: 600;">Actual: 50%*</span></span>
             </div>
-            <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden;">
-              <div style="width: 100%; height: 100%; display: flex; align-items: center; padding-left: 10px; font-size: 11px; color: var(--text-muted);">0W / 1L / 14 open</div>
+            <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden; position: relative;">
+              <div style="width: 50%; height: 100%; background: var(--yellow); border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 11px; font-weight: 600; color: #0f1117; position: relative;">1W / 1L / 14 open</div>
             </div>
           </div>
         </div>
@@ -809,7 +836,7 @@
             <h3 style="font-size: 16px;"><span class="seg-arrow" id="arrow-g1">&#9654;</span>Group 1: Small Clinics &amp; ATC (&le;5 seats)</h3>
             <span style="background: var(--green); color: #0f1117; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">76% Close (39W/12L)</span>
           </div>
-          <p style="color: var(--text-muted); font-size: 14px;">Primarily inbound, &le;5 seats. Avg deal ~2.4 seats. 30+ of 39 wins are 1-3 seats. Click to expand deals.</p>
+          <p style="color: var(--text-muted); font-size: 14px;">Primarily inbound, &le;5 seats. Avg deal ~2.4 seats. 30+ of 39 wins are 1-3 seats.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
@@ -830,34 +857,105 @@
         </div>
 
         <div class="seg-deals" id="deals-g1">
-          <div class="deal-section-header" style="color:var(--green);">Won (39) -- $11,893 ARR</div>
-          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">UNC Football Sports Medicine</span><span class="deal-amt">$645</span><span class="deal-badge badge-won">Won</span></div>
-          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Dynamic Physical Therapy</span><span class="deal-amt">$645</span><span class="deal-badge badge-won">Won</span></div>
-          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Tyler Legacy HS</span><span class="deal-amt">$645</span><span class="deal-badge badge-won">Won</span></div>
-          <div class="deal-row"><span class="deal-seats">4</span><span class="deal-name">Apex Physical Therapy</span><span class="deal-amt">$516</span><span class="deal-badge badge-won">Won</span></div>
-          <div class="deal-row"><span class="deal-seats">4</span><span class="deal-name">Placentia-Yorba Linda Unified School District</span><span class="deal-amt">$516</span><span class="deal-badge badge-won">Won</span></div>
-          <div class="deal-row"><span class="deal-seats">4</span><span class="deal-name">Westmoore High School District</span><span class="deal-amt">$516</span><span class="deal-badge badge-won">Won</span></div>
-          <div class="deal-row"><span class="deal-seats">1-4</span><span class="deal-name">Soar Physical Therapy, Recon Perform, Bowdin College, Georgian University, +29 more</span><span class="deal-amt">33 deals / $8,410</span><span class="deal-badge badge-won">Won</span></div>
-          <div class="deal-section-header" style="color:var(--red);">Lost (12) -- $5,735 ARR</div>
-          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">PT Solutions Georgia</span><span class="deal-amt">$645</span><span class="deal-badge badge-lost">Lost</span></div>
-          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Duke Health</span><span class="deal-amt">$645</span><span class="deal-badge badge-lost">Lost</span></div>
-          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Evolve PT</span><span class="deal-amt">$645</span><span class="deal-badge badge-lost">Lost</span></div>
-          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Kimberly Salinas</span><span class="deal-amt">$645</span><span class="deal-badge badge-lost">Lost</span></div>
-          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Coast Physical Therapy & Sports Medicine</span><span class="deal-amt">$645</span><span class="deal-badge badge-lost">Lost</span></div>
-          <div class="deal-row"><span class="deal-seats">4</span><span class="deal-name">Tanner Strommen & co.</span><span class="deal-amt">$575</span><span class="deal-badge badge-lost">Lost</span></div>
-          <div class="deal-row"><span class="deal-seats">1-4</span><span class="deal-name">PhysioStrong yr1, The Sports MedicTT, Mentor Clinic, Pondera Rehab & Fitness, +2 more</span><span class="deal-amt">6 deals / $1,935</span><span class="deal-badge badge-lost">Lost</span></div>
-          <div class="deal-section-header" style="color:var(--accent);">Open Pipeline (21) -- $10,020 ARR</div>
-          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Ultimate Edge Sports Medicine</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Forte Physical Therapy & Performance</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">APEX PWR</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Tyre Physical Therapy & Performance</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">One Brooklyn Health</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Performance Care Centre</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Vassar College ATC</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Peak Movement</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">ROKKE PT</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Sports Rehab Center</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">1-4</span><span class="deal-name">St. Olaf College ATC, Arlington ISD, Alicia Romanko coaching group, Katy ISD, +7 more</span><span class="deal-amt">11 deals / $3,570</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-sub">
+            <div class="deal-sub-toggle" onclick="toggleSubDeals('g1-won')">
+              <span class="deal-sub-arrow" id="sub-arrow-g1-won">&#9654;</span>
+              <span class="deal-sub-label" style="color: var(--green);">Won (39)</span>
+              <span class="deal-sub-meta">-- $11,893 ARR</span>
+            </div>
+            <ul class="deal-sub-list" id="sub-deals-g1-won">
+              <li><span class="deal-bullet-seats">5 seats</span> <span class="deal-bullet-name">UNC Football Sports Medicine</span> <span class="deal-bullet-amt">$645</span></li>
+              <li><span class="deal-bullet-seats">5 seats</span> <span class="deal-bullet-name">Dynamic Physical Therapy</span> <span class="deal-bullet-amt">$645</span></li>
+              <li><span class="deal-bullet-seats">5 seats</span> <span class="deal-bullet-name">Tyler Legacy HS</span> <span class="deal-bullet-amt">$645</span></li>
+              <li><span class="deal-bullet-seats">4 seats</span> <span class="deal-bullet-name">Apex Physical Therapy</span> <span class="deal-bullet-amt">$516</span></li>
+              <li><span class="deal-bullet-seats">4 seats</span> <span class="deal-bullet-name">Placentia-Yorba Linda Unified School District</span> <span class="deal-bullet-amt">$516</span></li>
+              <li><span class="deal-bullet-seats">4 seats</span> <span class="deal-bullet-name">Westmoore High School District</span> <span class="deal-bullet-amt">$516</span></li>
+              <li><span class="deal-bullet-seats">4 seats</span> <span class="deal-bullet-name">Soar Physical Therapy</span> <span class="deal-bullet-amt">$516</span></li>
+              <li><span class="deal-bullet-seats">3 seats</span> <span class="deal-bullet-name">Recon Perform</span> <span class="deal-bullet-amt">$387</span></li>
+              <li><span class="deal-bullet-seats">3 seats</span> <span class="deal-bullet-name">Bowdin College</span> <span class="deal-bullet-amt">$374</span></li>
+              <li><span class="deal-bullet-seats">3 seats</span> <span class="deal-bullet-name">Georgian University</span> <span class="deal-bullet-amt">$387</span></li>
+              <li><span class="deal-bullet-seats">3 seats</span> <span class="deal-bullet-name">Total Core PT</span> <span class="deal-bullet-amt">$387</span></li>
+              <li><span class="deal-bullet-seats">3 seats</span> <span class="deal-bullet-name">Stowe Physical Therapy & Pilates</span> <span class="deal-bullet-amt">$387</span></li>
+              <li><span class="deal-bullet-seats">3 seats</span> <span class="deal-bullet-name">Bastrop ISD</span> <span class="deal-bullet-amt">$345</span></li>
+              <li><span class="deal-bullet-seats">3 seats</span> <span class="deal-bullet-name">Shady Side Academy AT</span> <span class="deal-bullet-amt">$387</span></li>
+              <li><span class="deal-bullet-seats">3 seats</span> <span class="deal-bullet-name">Candence Physiotherapy</span> <span class="deal-bullet-amt">$361</span></li>
+              <li><span class="deal-bullet-seats">2 seats</span> <span class="deal-bullet-name">Mvmt Physiochiro</span> <span class="deal-bullet-amt">$281</span></li>
+              <li><span class="deal-bullet-seats">2 seats</span> <span class="deal-bullet-name">Empower Physical Therapy & Consulting</span> <span class="deal-bullet-amt">$258</span></li>
+              <li><span class="deal-bullet-seats">2 seats</span> <span class="deal-bullet-name">RISE Rehab & Sports Performance</span> <span class="deal-bullet-amt">$258</span></li>
+              <li><span class="deal-bullet-seats">2 seats</span> <span class="deal-bullet-name">Rose Petals Therapeutic Massage</span> <span class="deal-bullet-amt">$207</span></li>
+              <li><span class="deal-bullet-seats">2 seats</span> <span class="deal-bullet-name">Damien HS</span> <span class="deal-bullet-amt">$247</span></li>
+              <li><span class="deal-bullet-seats">2 seats</span> <span class="deal-bullet-name">Candence Physiotherapy</span> <span class="deal-bullet-amt">$258</span></li>
+              <li><span class="deal-bullet-seats">2 seats</span> <span class="deal-bullet-name">Menlo School</span> <span class="deal-bullet-amt">$258</span></li>
+              <li><span class="deal-bullet-seats">2 seats</span> <span class="deal-bullet-name">Georgetown Prep School</span> <span class="deal-bullet-amt">$258</span></li>
+              <li><span class="deal-bullet-seats">2 seats</span> <span class="deal-bullet-name">Renewed Physical Therapy</span> <span class="deal-bullet-amt">$258</span></li>
+              <li><span class="deal-bullet-seats">2 seats</span> <span class="deal-bullet-name">Auburn University Recreation and Wellness</span> <span class="deal-bullet-amt">$258</span></li>
+              <li><span class="deal-bullet-seats">2 seats</span> <span class="deal-bullet-name">Recon Perform</span> <span class="deal-bullet-amt">$258</span></li>
+              <li><span class="deal-bullet-seats">2 seats</span> <span class="deal-bullet-name">Kathalynas Spine Sport & Rehab</span> <span class="deal-bullet-amt">$258</span></li>
+              <li><span class="deal-bullet-seats">2 seats</span> <span class="deal-bullet-name">Proactive Kinetics</span> <span class="deal-bullet-amt">$258</span></li>
+              <li><span class="deal-bullet-seats">2 seats</span> <span class="deal-bullet-name">Optimal Performance Physical Therapy</span> <span class="deal-bullet-amt">$258</span></li>
+              <li><span class="deal-bullet-seats">1 seats</span> <span class="deal-bullet-name">StretchWell</span> <span class="deal-bullet-amt">$114</span></li>
+              <li><span class="deal-bullet-seats">1 seats</span> <span class="deal-bullet-name">StretchWell</span> <span class="deal-bullet-amt">$129</span></li>
+              <li><span class="deal-bullet-seats">1 seats</span> <span class="deal-bullet-name">Lyndhurst High School</span> <span class="deal-bullet-amt">$144</span></li>
+              <li><span class="deal-bullet-seats">1 seats</span> <span class="deal-bullet-name">AOK Physical Therapy</span> <span class="deal-bullet-amt">$129</span></li>
+              <li><span class="deal-bullet-seats">1 seats</span> <span class="deal-bullet-name">StretchWell</span> <span class="deal-bullet-amt">$114</span></li>
+              <li><span class="deal-bullet-seats">1 seats</span> <span class="deal-bullet-name">Jason Torress - 1 membership</span> <span class="deal-bullet-amt">$144</span></li>
+              <li><span class="deal-bullet-seats">1 seats</span> <span class="deal-bullet-name">Aldringen Physiotherapy</span> <span class="deal-bullet-amt">$129</span></li>
+              <li><span class="deal-bullet-seats">1 seats</span> <span class="deal-bullet-name">Recon Perform</span> <span class="deal-bullet-amt">$129</span></li>
+              <li><span class="deal-bullet-seats">1 seats</span> <span class="deal-bullet-name">Shoreline Sports Medicine</span> <span class="deal-bullet-amt">$129</span></li>
+              <li><span class="deal-bullet-seats">1 seats</span> <span class="deal-bullet-name">Jay West Physical Therapy</span> <span class="deal-bullet-amt">$144</span></li>
+            </ul>
+          </div>
+          <div class="deal-sub">
+            <div class="deal-sub-toggle" onclick="toggleSubDeals('g1-lost')">
+              <span class="deal-sub-arrow" id="sub-arrow-g1-lost">&#9654;</span>
+              <span class="deal-sub-label" style="color: var(--red);">Lost (12)</span>
+              <span class="deal-sub-meta">-- $5,735 ARR</span>
+            </div>
+            <ul class="deal-sub-list" id="sub-deals-g1-lost">
+              <li><span class="deal-bullet-seats">5 seats</span> <span class="deal-bullet-name">PT Solutions Georgia</span> <span class="deal-bullet-amt">$645</span></li>
+              <li><span class="deal-bullet-seats">5 seats</span> <span class="deal-bullet-name">Duke Health</span> <span class="deal-bullet-amt">$645</span></li>
+              <li><span class="deal-bullet-seats">5 seats</span> <span class="deal-bullet-name">Evolve PT</span> <span class="deal-bullet-amt">$645</span></li>
+              <li><span class="deal-bullet-seats">5 seats</span> <span class="deal-bullet-name">Kimberly Salinas</span> <span class="deal-bullet-amt">$645</span></li>
+              <li><span class="deal-bullet-seats">5 seats</span> <span class="deal-bullet-name">Coast Physical Therapy & Sports Medicine</span> <span class="deal-bullet-amt">$645</span></li>
+              <li><span class="deal-bullet-seats">4 seats</span> <span class="deal-bullet-name">Tanner Strommen & co.</span> <span class="deal-bullet-amt">$575</span></li>
+              <li><span class="deal-bullet-seats">4 seats</span> <span class="deal-bullet-name">PhysioStrong yr1</span> <span class="deal-bullet-amt">$516</span></li>
+              <li><span class="deal-bullet-seats">4 seats</span> <span class="deal-bullet-name">The Sports MedicTT</span> <span class="deal-bullet-amt">$516</span></li>
+              <li><span class="deal-bullet-seats">3 seats</span> <span class="deal-bullet-name">Mentor Clinic</span> <span class="deal-bullet-amt">$387</span></li>
+              <li><span class="deal-bullet-seats">2 seats</span> <span class="deal-bullet-name">Pondera Rehab & Fitness</span> <span class="deal-bullet-amt">$258</span></li>
+              <li><span class="deal-bullet-seats">1 seats</span> <span class="deal-bullet-name">RoundRock</span> <span class="deal-bullet-amt">$129</span></li>
+              <li><span class="deal-bullet-seats">1 seats</span> <span class="deal-bullet-name">King Physical Therapy</span> <span class="deal-bullet-amt">$129</span></li>
+            </ul>
+          </div>
+          <div class="deal-sub">
+            <div class="deal-sub-toggle" onclick="toggleSubDeals('g1-open')">
+              <span class="deal-sub-arrow" id="sub-arrow-g1-open">&#9654;</span>
+              <span class="deal-sub-label" style="color: var(--accent);">Open Pipeline (21)</span>
+              <span class="deal-sub-meta">-- $10,020 ARR</span>
+            </div>
+            <ul class="deal-sub-list" id="sub-deals-g1-open">
+              <li><span class="deal-bullet-seats">5 seats</span> <span class="deal-bullet-name">Ultimate Edge Sports Medicine</span> <span class="deal-bullet-amt">$645</span></li>
+              <li><span class="deal-bullet-seats">5 seats</span> <span class="deal-bullet-name">Forte Physical Therapy & Performance</span> <span class="deal-bullet-amt">$645</span></li>
+              <li><span class="deal-bullet-seats">5 seats</span> <span class="deal-bullet-name">APEX PWR</span> <span class="deal-bullet-amt">$645</span></li>
+              <li><span class="deal-bullet-seats">5 seats</span> <span class="deal-bullet-name">Tyre Physical Therapy & Performance</span> <span class="deal-bullet-amt">$645</span></li>
+              <li><span class="deal-bullet-seats">5 seats</span> <span class="deal-bullet-name">One Brooklyn Health</span> <span class="deal-bullet-amt">$645</span></li>
+              <li><span class="deal-bullet-seats">5 seats</span> <span class="deal-bullet-name">Performance Care Centre</span> <span class="deal-bullet-amt">$645</span></li>
+              <li><span class="deal-bullet-seats">5 seats</span> <span class="deal-bullet-name">Vassar College ATC</span> <span class="deal-bullet-amt">$645</span></li>
+              <li><span class="deal-bullet-seats">5 seats</span> <span class="deal-bullet-name">Peak Movement</span> <span class="deal-bullet-amt">$645</span></li>
+              <li><span class="deal-bullet-seats">5 seats</span> <span class="deal-bullet-name">ROKKE PT</span> <span class="deal-bullet-amt">$645</span></li>
+              <li><span class="deal-bullet-seats">5 seats</span> <span class="deal-bullet-name">Sports Rehab Center</span> <span class="deal-bullet-amt">$645</span></li>
+              <li><span class="deal-bullet-seats">4 seats</span> <span class="deal-bullet-name">St. Olaf College ATC</span> <span class="deal-bullet-amt">$516</span></li>
+              <li><span class="deal-bullet-seats">3 seats</span> <span class="deal-bullet-name">Arlington ISD</span> <span class="deal-bullet-amt">$345</span></li>
+              <li><span class="deal-bullet-seats">3 seats</span> <span class="deal-bullet-name">Alicia Romanko coaching group</span> <span class="deal-bullet-amt">$387</span></li>
+              <li><span class="deal-bullet-seats">3 seats</span> <span class="deal-bullet-name">Katy ISD</span> <span class="deal-bullet-amt">$387</span></li>
+              <li><span class="deal-bullet-seats">3 seats</span> <span class="deal-bullet-name">Broncho Sports - UCO</span> <span class="deal-bullet-amt">$387</span></li>
+              <li><span class="deal-bullet-seats">3 seats</span> <span class="deal-bullet-name">Millennium Physical Therapy</span> <span class="deal-bullet-amt">$387</span></li>
+              <li><span class="deal-bullet-seats">2 seats</span> <span class="deal-bullet-name">Mt Carmel High School</span> <span class="deal-bullet-amt">$258</span></li>
+              <li><span class="deal-bullet-seats">2 seats</span> <span class="deal-bullet-name">Aldringen Physiotherapy</span> <span class="deal-bullet-amt">$258</span></li>
+              <li><span class="deal-bullet-seats">2 seats</span> <span class="deal-bullet-name">Walla Walla University</span> <span class="deal-bullet-amt">$258</span></li>
+              <li><span class="deal-bullet-seats">2 seats</span> <span class="deal-bullet-name">mnphysiotherapy</span> <span class="deal-bullet-amt">$258</span></li>
+              <li><span class="deal-bullet-seats">1 seats</span> <span class="deal-bullet-name">Lifeschools</span> <span class="deal-bullet-amt">$129</span></li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -868,7 +966,7 @@
             <h3 style="font-size: 16px;"><span class="seg-arrow" id="arrow-g2">&#9654;</span>Group 2: Medium Clinics &amp; ATC (6-10 seats)</h3>
             <span style="background: var(--green); color: #0f1117; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">80% Close (8W/2L)</span>
           </div>
-          <p style="color: var(--text-muted); font-size: 14px;">Sweet spot: high close rate + 3x avg deal size vs small. Avg deal ~7 seats. Click to expand deals.</p>
+          <p style="color: var(--text-muted); font-size: 14px;">Sweet spot: high close rate + 3x avg deal size vs small. Avg deal ~7 seats.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
@@ -889,29 +987,53 @@
         </div>
 
         <div class="seg-deals" id="deals-g2">
-          <div class="deal-section-header" style="color:var(--green);">Won (8) -- $7,227 ARR</div>
-          <div class="deal-row"><span class="deal-seats">9</span><span class="deal-name">Precision Physical Therapy and Sports Rehab</span><span class="deal-amt">$1,161</span><span class="deal-badge badge-won">Won</span></div>
-          <div class="deal-row"><span class="deal-seats">8</span><span class="deal-name">Blue Valley ISD</span><span class="deal-amt">$1,032</span><span class="deal-badge badge-won">Won</span></div>
-          <div class="deal-row"><span class="deal-seats">8</span><span class="deal-name">Coltman and Baughman Physical Therapy</span><span class="deal-amt">$1,035</span><span class="deal-badge badge-won">Won</span></div>
-          <div class="deal-row"><span class="deal-seats">7</span><span class="deal-name">Wichita Public Schools Athletics</span><span class="deal-amt">$903</span><span class="deal-badge badge-won">Won</span></div>
-          <div class="deal-row"><span class="deal-seats">6</span><span class="deal-name">John Furey</span><span class="deal-amt">$774</span><span class="deal-badge badge-won">Won</span></div>
-          <div class="deal-row"><span class="deal-seats">6</span><span class="deal-name">Kansas Orthopaedic Center</span><span class="deal-amt">$774</span><span class="deal-badge badge-won">Won</span></div>
-          <div class="deal-row"><span class="deal-seats">6</span><span class="deal-name">REV PT & Sports Medicine</span><span class="deal-amt">$774</span><span class="deal-badge badge-won">Won</span></div>
-          <div class="deal-row"><span class="deal-seats">6</span><span class="deal-name">Prairie View A&M University Athletics</span><span class="deal-amt">$774</span><span class="deal-badge badge-won">Won</span></div>
-          <div class="deal-section-header" style="color:var(--red);">Lost (2) -- $1,677 ARR</div>
-          <div class="deal-row"><span class="deal-seats">7</span><span class="deal-name">Amherst College ATC</span><span class="deal-amt">$903</span><span class="deal-badge badge-lost">Lost</span></div>
-          <div class="deal-row"><span class="deal-seats">6</span><span class="deal-name">Bentonville HS ATC</span><span class="deal-amt">$774</span><span class="deal-badge badge-lost">Lost</span></div>
-          <div class="deal-section-header" style="color:var(--accent);">Open Pipeline (10) -- $10,910 ARR</div>
-          <div class="deal-row"><span class="deal-seats">10</span><span class="deal-name">Virginia Tech ATC</span><span class="deal-amt">$1,290</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">10</span><span class="deal-name">Barraco Physiotherapy</span><span class="deal-amt">$1,290</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">9</span><span class="deal-name">Tennessee Orthopedics Alliance</span><span class="deal-amt">$1,150</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">9</span><span class="deal-name">University of Tennessee</span><span class="deal-amt">$1,150</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">9</span><span class="deal-name">Orange County Physical Therapy</span><span class="deal-amt">$1,150</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">9</span><span class="deal-name">Staszak Physical Therapy</span><span class="deal-amt">$1,150</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">9</span><span class="deal-name">Cascade Sports Injury Prevention & Physical Therapy</span><span class="deal-amt">$1,150</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">8</span><span class="deal-name">Headquarters PT</span><span class="deal-amt">$1,032</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">6</span><span class="deal-name">Empower PT and Fitness</span><span class="deal-amt">$774</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">6</span><span class="deal-name">Georgia Tech Athletics</span><span class="deal-amt">$774</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-sub">
+            <div class="deal-sub-toggle" onclick="toggleSubDeals('g2-won')">
+              <span class="deal-sub-arrow" id="sub-arrow-g2-won">&#9654;</span>
+              <span class="deal-sub-label" style="color: var(--green);">Won (8)</span>
+              <span class="deal-sub-meta">-- $7,227 ARR</span>
+            </div>
+            <ul class="deal-sub-list" id="sub-deals-g2-won">
+              <li><span class="deal-bullet-seats">9 seats</span> <span class="deal-bullet-name">Precision Physical Therapy and Sports Rehab</span> <span class="deal-bullet-amt">$1,161</span></li>
+              <li><span class="deal-bullet-seats">8 seats</span> <span class="deal-bullet-name">Blue Valley ISD</span> <span class="deal-bullet-amt">$1,032</span></li>
+              <li><span class="deal-bullet-seats">8 seats</span> <span class="deal-bullet-name">Coltman and Baughman Physical Therapy</span> <span class="deal-bullet-amt">$1,035</span></li>
+              <li><span class="deal-bullet-seats">7 seats</span> <span class="deal-bullet-name">Wichita Public Schools Athletics</span> <span class="deal-bullet-amt">$903</span></li>
+              <li><span class="deal-bullet-seats">6 seats</span> <span class="deal-bullet-name">John Furey</span> <span class="deal-bullet-amt">$774</span></li>
+              <li><span class="deal-bullet-seats">6 seats</span> <span class="deal-bullet-name">Kansas Orthopaedic Center</span> <span class="deal-bullet-amt">$774</span></li>
+              <li><span class="deal-bullet-seats">6 seats</span> <span class="deal-bullet-name">REV PT & Sports Medicine</span> <span class="deal-bullet-amt">$774</span></li>
+              <li><span class="deal-bullet-seats">6 seats</span> <span class="deal-bullet-name">Prairie View A&M University Athletics</span> <span class="deal-bullet-amt">$774</span></li>
+            </ul>
+          </div>
+          <div class="deal-sub">
+            <div class="deal-sub-toggle" onclick="toggleSubDeals('g2-lost')">
+              <span class="deal-sub-arrow" id="sub-arrow-g2-lost">&#9654;</span>
+              <span class="deal-sub-label" style="color: var(--red);">Lost (2)</span>
+              <span class="deal-sub-meta">-- $1,677 ARR</span>
+            </div>
+            <ul class="deal-sub-list" id="sub-deals-g2-lost">
+              <li><span class="deal-bullet-seats">7 seats</span> <span class="deal-bullet-name">Amherst College ATC</span> <span class="deal-bullet-amt">$903</span></li>
+              <li><span class="deal-bullet-seats">6 seats</span> <span class="deal-bullet-name">Bentonville HS ATC</span> <span class="deal-bullet-amt">$774</span></li>
+            </ul>
+          </div>
+          <div class="deal-sub">
+            <div class="deal-sub-toggle" onclick="toggleSubDeals('g2-open')">
+              <span class="deal-sub-arrow" id="sub-arrow-g2-open">&#9654;</span>
+              <span class="deal-sub-label" style="color: var(--accent);">Open Pipeline (10)</span>
+              <span class="deal-sub-meta">-- $10,910 ARR</span>
+            </div>
+            <ul class="deal-sub-list" id="sub-deals-g2-open">
+              <li><span class="deal-bullet-seats">10 seats</span> <span class="deal-bullet-name">Virginia Tech ATC</span> <span class="deal-bullet-amt">$1,290</span></li>
+              <li><span class="deal-bullet-seats">10 seats</span> <span class="deal-bullet-name">Barraco Physiotherapy</span> <span class="deal-bullet-amt">$1,290</span></li>
+              <li><span class="deal-bullet-seats">9 seats</span> <span class="deal-bullet-name">Tennessee Orthopedics Alliance</span> <span class="deal-bullet-amt">$1,150</span></li>
+              <li><span class="deal-bullet-seats">9 seats</span> <span class="deal-bullet-name">University of Tennessee</span> <span class="deal-bullet-amt">$1,150</span></li>
+              <li><span class="deal-bullet-seats">9 seats</span> <span class="deal-bullet-name">Orange County Physical Therapy</span> <span class="deal-bullet-amt">$1,150</span></li>
+              <li><span class="deal-bullet-seats">9 seats</span> <span class="deal-bullet-name">Staszak Physical Therapy</span> <span class="deal-bullet-amt">$1,150</span></li>
+              <li><span class="deal-bullet-seats">9 seats</span> <span class="deal-bullet-name">Cascade Sports Injury Prevention & Physical Therapy</span> <span class="deal-bullet-amt">$1,150</span></li>
+              <li><span class="deal-bullet-seats">8 seats</span> <span class="deal-bullet-name">Headquarters PT</span> <span class="deal-bullet-amt">$1,032</span></li>
+              <li><span class="deal-bullet-seats">6 seats</span> <span class="deal-bullet-name">Empower PT and Fitness</span> <span class="deal-bullet-amt">$774</span></li>
+              <li><span class="deal-bullet-seats">6 seats</span> <span class="deal-bullet-name">Georgia Tech Athletics</span> <span class="deal-bullet-amt">$774</span></li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -920,9 +1042,9 @@
         <div class="seg-toggle" onclick="toggleDeals('g3')">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
             <h3 style="font-size: 16px;"><span class="seg-arrow" id="arrow-g3">&#9654;</span>Group 3: Large AT Departments (&gt;10 seats)</h3>
-            <span style="background: var(--yellow); color: #0f1117; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">50% Close (1W/1L)</span>
+            <span style="background: var(--yellow); color: #0f1117; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">0% Close (0W/1L) *n=1</span>
           </div>
-          <p style="color: var(--text-muted); font-size: 14px;">College/university AT depts, 10+ seats. Avg 15 seats. Strong pipeline: 7 open deals. Click to expand deals.</p>
+          <p style="color: var(--text-muted); font-size: 14px;">College/university AT depts, 10+ seats. Avg 15 seats. No wins yet -- 7 open deals in pipeline.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
@@ -944,29 +1066,43 @@
         </div>
 
         <div class="seg-deals" id="deals-g3">
-          <div class="deal-section-header" style="color:var(--green);">Won (1) -- $2,375 ARR</div>
-          <div class="deal-row"><span class="deal-seats">18</span><span class="deal-name">North Kitsap High School Sports Med</span><span class="deal-amt">$2,375</span><span class="deal-badge badge-won">Won</span></div>
-          <div class="deal-section-header" style="color:var(--red);">Lost (1) -- $1,380 ARR</div>
-          <div class="deal-row"><span class="deal-seats">11</span><span class="deal-name">San Jose State University ATC</span><span class="deal-amt">$1,380</span><span class="deal-badge badge-lost">Lost</span></div>
-          <div class="deal-section-header" style="color:var(--accent);">Open Pipeline (7) -- $14,030 ARR</div>
-          <div class="deal-row"><span class="deal-seats">23</span><span class="deal-name">Orlando County Public Schools Athletics</span><span class="deal-amt">$3,030</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">21</span><span class="deal-name">University of Michigan Athletic Department</span><span class="deal-amt">$2,700</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">13</span><span class="deal-name">UC Davis ATC</span><span class="deal-amt">$1,725</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">13</span><span class="deal-name">Stanford Athletics ATC</span><span class="deal-amt">$1,725</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">13</span><span class="deal-name">UC San Diego (UCSD) ATC</span><span class="deal-amt">$1,725</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">12</span><span class="deal-name">Kamehameha Schools - ATC</span><span class="deal-amt">$1,610</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">12</span><span class="deal-name">UNC Olympic Sports</span><span class="deal-amt">$1,515</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-sub">
+            <div class="deal-sub-toggle" onclick="toggleSubDeals('g3-lost')">
+              <span class="deal-sub-arrow" id="sub-arrow-g3-lost">&#9654;</span>
+              <span class="deal-sub-label" style="color: var(--red);">Lost (1)</span>
+              <span class="deal-sub-meta">-- $1,380 ARR</span>
+            </div>
+            <ul class="deal-sub-list" id="sub-deals-g3-lost">
+              <li><span class="deal-bullet-seats">11 seats</span> <span class="deal-bullet-name">San Jose State University ATC</span> <span class="deal-bullet-amt">$1,380</span></li>
+            </ul>
+          </div>
+          <div class="deal-sub">
+            <div class="deal-sub-toggle" onclick="toggleSubDeals('g3-open')">
+              <span class="deal-sub-arrow" id="sub-arrow-g3-open">&#9654;</span>
+              <span class="deal-sub-label" style="color: var(--accent);">Open Pipeline (7)</span>
+              <span class="deal-sub-meta">-- $14,030 ARR</span>
+            </div>
+            <ul class="deal-sub-list" id="sub-deals-g3-open">
+              <li><span class="deal-bullet-seats">23 seats</span> <span class="deal-bullet-name">Orlando County Public Schools Athletics</span> <span class="deal-bullet-amt">$3,030</span></li>
+              <li><span class="deal-bullet-seats">21 seats</span> <span class="deal-bullet-name">University of Michigan Athletic Department</span> <span class="deal-bullet-amt">$2,700</span></li>
+              <li><span class="deal-bullet-seats">13 seats</span> <span class="deal-bullet-name">UC Davis ATC</span> <span class="deal-bullet-amt">$1,725</span></li>
+              <li><span class="deal-bullet-seats">13 seats</span> <span class="deal-bullet-name">Stanford Athletics ATC</span> <span class="deal-bullet-amt">$1,725</span></li>
+              <li><span class="deal-bullet-seats">13 seats</span> <span class="deal-bullet-name">UC San Diego (UCSD) ATC</span> <span class="deal-bullet-amt">$1,725</span></li>
+              <li><span class="deal-bullet-seats">12 seats</span> <span class="deal-bullet-name">Kamehameha Schools - ATC</span> <span class="deal-bullet-amt">$1,610</span></li>
+              <li><span class="deal-bullet-seats">12 seats</span> <span class="deal-bullet-name">UNC Olympic Sports</span> <span class="deal-bullet-amt">$1,515</span></li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <!-- GROUP 4 -->
-      <div class="card" style="margin-bottom: 20px; border-left: 3px solid var(--orange);">
+      <div class="card" style="margin-bottom: 20px; border-left: 3px solid var(--yellow);">
         <div class="seg-toggle" onclick="toggleDeals('g4')">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
             <h3 style="font-size: 16px;"><span class="seg-arrow" id="arrow-g4">&#9654;</span>Group 4: Large PT Chains (&gt;10 seats)</h3>
-            <span style="background: var(--orange); color: #0f1117; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">38% Close (3W/5L)</span>
+            <span style="background: var(--yellow); color: #0f1117; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">50% Close (3W/3L)</span>
           </div>
-          <p style="color: var(--text-muted); font-size: 14px;">Multi-location PT orgs. Win 10-23 seats, lose 25+. Video/templates matter most. Click to expand deals.</p>
+          <p style="color: var(--text-muted); font-size: 14px;">Multi-location PT/ortho orgs. Win 10-23 seats, lose 25+. Video/templates matter most.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
@@ -989,22 +1125,44 @@
         </div>
 
         <div class="seg-deals" id="deals-g4">
-          <div class="deal-section-header" style="color:var(--green);">Won (3) -- $6,255 ARR</div>
-          <div class="deal-row"><span class="deal-seats">23</span><span class="deal-name">The University of Texas at San Antonio Department of Orthopaedics</span><span class="deal-amt">$3,030</span><span class="deal-badge badge-won">Won</span></div>
-          <div class="deal-row"><span class="deal-seats">13</span><span class="deal-name">Los Gatos Orthopedic Sports Therapy</span><span class="deal-amt">$1,725</span><span class="deal-badge badge-won">Won</span></div>
-          <div class="deal-row"><span class="deal-seats">12</span><span class="deal-name">ReEnvision Physical Therapy</span><span class="deal-amt">$1,500</span><span class="deal-badge badge-won">Won</span></div>
-          <div class="deal-section-header" style="color:var(--red);">Lost (5) -- $13,442 ARR</div>
-          <div class="deal-row"><span class="deal-seats">37</span><span class="deal-name">Sport Med</span><span class="deal-amt">$4,740</span><span class="deal-badge badge-lost">Lost</span></div>
-          <div class="deal-row"><span class="deal-seats">25</span><span class="deal-name">Quinn Orthopedic Physical Therapy</span><span class="deal-amt">$3,232</span><span class="deal-badge badge-lost">Lost</span></div>
-          <div class="deal-row"><span class="deal-seats">16</span><span class="deal-name">Promotion Physical Therapy</span><span class="deal-amt">$2,020</span><span class="deal-badge badge-lost">Lost</span></div>
-          <div class="deal-row"><span class="deal-seats">13</span><span class="deal-name">Cherokee Regional Medical Center</span><span class="deal-amt">$1,725</span><span class="deal-badge badge-lost">Lost</span></div>
-          <div class="deal-row"><span class="deal-seats">13</span><span class="deal-name">Sidney Regional Medical Center</span><span class="deal-amt">$1,725</span><span class="deal-badge badge-lost">Lost</span></div>
-          <div class="deal-section-header" style="color:var(--accent);">Open Pipeline (5) -- $32,765 ARR</div>
-          <div class="deal-row"><span class="deal-seats">155</span><span class="deal-name">InMotion Physical Therapy</span><span class="deal-amt">$20,000</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">31</span><span class="deal-name">MyoDetox Team</span><span class="deal-amt">$4,000</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">31</span><span class="deal-name">Ortho NC</span><span class="deal-amt">$4,040</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">20</span><span class="deal-name">Therapeutic Associates inc (TAI)</span><span class="deal-amt">$2,525</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">17</span><span class="deal-name">FX Physical Therapy Expansion</span><span class="deal-amt">$2,200</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-sub">
+            <div class="deal-sub-toggle" onclick="toggleSubDeals('g4-won')">
+              <span class="deal-sub-arrow" id="sub-arrow-g4-won">&#9654;</span>
+              <span class="deal-sub-label" style="color: var(--green);">Won (3)</span>
+              <span class="deal-sub-meta">-- $6,255 ARR</span>
+            </div>
+            <ul class="deal-sub-list" id="sub-deals-g4-won">
+              <li><span class="deal-bullet-seats">23 seats</span> <span class="deal-bullet-name">The University of Texas at San Antonio Department of Orthopaedics</span> <span class="deal-bullet-amt">$3,030</span></li>
+              <li><span class="deal-bullet-seats">13 seats</span> <span class="deal-bullet-name">Los Gatos Orthopedic Sports Therapy</span> <span class="deal-bullet-amt">$1,725</span></li>
+              <li><span class="deal-bullet-seats">12 seats</span> <span class="deal-bullet-name">ReEnvision Physical Therapy</span> <span class="deal-bullet-amt">$1,500</span></li>
+            </ul>
+          </div>
+          <div class="deal-sub">
+            <div class="deal-sub-toggle" onclick="toggleSubDeals('g4-lost')">
+              <span class="deal-sub-arrow" id="sub-arrow-g4-lost">&#9654;</span>
+              <span class="deal-sub-label" style="color: var(--red);">Lost (3)</span>
+              <span class="deal-sub-meta">-- $9,992 ARR</span>
+            </div>
+            <ul class="deal-sub-list" id="sub-deals-g4-lost">
+              <li><span class="deal-bullet-seats">37 seats</span> <span class="deal-bullet-name">Sport Med</span> <span class="deal-bullet-amt">$4,740</span></li>
+              <li><span class="deal-bullet-seats">25 seats</span> <span class="deal-bullet-name">Quinn Orthopedic Physical Therapy</span> <span class="deal-bullet-amt">$3,232</span></li>
+              <li><span class="deal-bullet-seats">16 seats</span> <span class="deal-bullet-name">Promotion Physical Therapy</span> <span class="deal-bullet-amt">$2,020</span></li>
+            </ul>
+          </div>
+          <div class="deal-sub">
+            <div class="deal-sub-toggle" onclick="toggleSubDeals('g4-open')">
+              <span class="deal-sub-arrow" id="sub-arrow-g4-open">&#9654;</span>
+              <span class="deal-sub-label" style="color: var(--accent);">Open Pipeline (5)</span>
+              <span class="deal-sub-meta">-- $32,765 ARR</span>
+            </div>
+            <ul class="deal-sub-list" id="sub-deals-g4-open">
+              <li><span class="deal-bullet-seats">155 seats</span> <span class="deal-bullet-name">InMotion Physical Therapy</span> <span class="deal-bullet-amt">$20,000</span></li>
+              <li><span class="deal-bullet-seats">31 seats</span> <span class="deal-bullet-name">MyoDetox Team</span> <span class="deal-bullet-amt">$4,000</span></li>
+              <li><span class="deal-bullet-seats">31 seats</span> <span class="deal-bullet-name">Ortho NC</span> <span class="deal-bullet-amt">$4,040</span></li>
+              <li><span class="deal-bullet-seats">20 seats</span> <span class="deal-bullet-name">Therapeutic Associates inc (TAI)</span> <span class="deal-bullet-amt">$2,525</span></li>
+              <li><span class="deal-bullet-seats">17 seats</span> <span class="deal-bullet-name">FX Physical Therapy Expansion</span> <span class="deal-bullet-amt">$2,200</span></li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -1013,9 +1171,9 @@
         <div class="seg-toggle" onclick="toggleDeals('g5')">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
             <h3 style="font-size: 16px;"><span class="seg-arrow" id="arrow-g5">&#9654;</span>Group 5: Enterprise Hospital Systems</h3>
-            <span style="background: var(--red); color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">No Closes (4 open)</span>
+            <span style="background: var(--red); color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">0% Close (0W/2L) *n=2</span>
           </div>
-          <p style="color: var(--text-muted); font-size: 14px;">Hundreds of PTs, embedded in Medbridge/Epic. No closed deals yet -- 4 in pipeline. Click to expand deals.</p>
+          <p style="color: var(--text-muted); font-size: 14px;">Hospitals &amp; medical centers, embedded in Medbridge/Epic. No wins -- 2 lost, 4 in pipeline.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
@@ -1037,22 +1195,41 @@
         </div>
 
         <div class="seg-deals" id="deals-g5">
-          <div class="deal-section-header" style="color:var(--accent);">Open Pipeline (4) -- $11,225 ARR</div>
-          <div class="deal-row"><span class="deal-seats">39</span><span class="deal-name">Memorial Hermann Group</span><span class="deal-amt">$5,050</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">23</span><span class="deal-name">University Hospitals Sports Medicine (Cleveland)</span><span class="deal-amt">$3,030</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">19</span><span class="deal-name">St. Louis Children's hospital Young Athlete Center</span><span class="deal-amt">$2,500</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">VA Palo Alto Campus</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-sub">
+            <div class="deal-sub-toggle" onclick="toggleSubDeals('g5-lost')">
+              <span class="deal-sub-arrow" id="sub-arrow-g5-lost">&#9654;</span>
+              <span class="deal-sub-label" style="color: var(--red);">Lost (2)</span>
+              <span class="deal-sub-meta">-- $3,450 ARR</span>
+            </div>
+            <ul class="deal-sub-list" id="sub-deals-g5-lost">
+              <li><span class="deal-bullet-seats">13 seats</span> <span class="deal-bullet-name">Cherokee Regional Medical Center</span> <span class="deal-bullet-amt">$1,725</span></li>
+              <li><span class="deal-bullet-seats">13 seats</span> <span class="deal-bullet-name">Sidney Regional Medical Center</span> <span class="deal-bullet-amt">$1,725</span></li>
+            </ul>
+          </div>
+          <div class="deal-sub">
+            <div class="deal-sub-toggle" onclick="toggleSubDeals('g5-open')">
+              <span class="deal-sub-arrow" id="sub-arrow-g5-open">&#9654;</span>
+              <span class="deal-sub-label" style="color: var(--accent);">Open Pipeline (4)</span>
+              <span class="deal-sub-meta">-- $11,225 ARR</span>
+            </div>
+            <ul class="deal-sub-list" id="sub-deals-g5-open">
+              <li><span class="deal-bullet-seats">39 seats</span> <span class="deal-bullet-name">Memorial Hermann Group</span> <span class="deal-bullet-amt">$5,050</span></li>
+              <li><span class="deal-bullet-seats">23 seats</span> <span class="deal-bullet-name">University Hospitals Sports Medicine (Cleveland)</span> <span class="deal-bullet-amt">$3,030</span></li>
+              <li><span class="deal-bullet-seats">19 seats</span> <span class="deal-bullet-name">St. Louis Children's hospital Young Athlete Center</span> <span class="deal-bullet-amt">$2,500</span></li>
+              <li><span class="deal-bullet-seats">5 seats</span> <span class="deal-bullet-name">VA Palo Alto Campus</span> <span class="deal-bullet-amt">$645</span></li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <!-- GROUP 6 -->
-      <div class="card" style="margin-bottom: 20px; border-left: 3px solid var(--red);">
+      <div class="card" style="margin-bottom: 20px; border-left: 3px solid var(--yellow);">
         <div class="seg-toggle" onclick="toggleDeals('g6')">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-            <h3 style="font-size: 16px;"><span class="seg-arrow" id="arrow-g6">&#9654;</span>Group 6: Schools (DPT, MSAT, PTA)</h3>
-            <span style="background: var(--red); color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">0% Close (0W/1L)</span>
+            <h3 style="font-size: 16px;"><span class="seg-arrow" id="arrow-g6">&#9654;</span>Group 6: Schools (DPT, MSAT, PTA, K-12)</h3>
+            <span style="background: var(--yellow); color: #0f1117; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">50% Close (1W/1L) *n=2</span>
           </div>
-          <p style="color: var(--text-muted); font-size: 14px;">Extremely long cycle. Largest pipeline: 14 open deals, ~$98K ARR. Click to expand deals.</p>
+          <p style="color: var(--text-muted); font-size: 14px;">Academic programs + K-12 athletics. Longest cycle, largest pipeline: ~$100K ARR.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
@@ -1078,23 +1255,49 @@
         </div>
 
         <div class="seg-deals" id="deals-g6">
-          <div class="deal-section-header" style="color:var(--red);">Lost (1) -- $5,050 ARR</div>
-          <div class="deal-row"><span class="deal-seats">39</span><span class="deal-name">Pacific Northwest University DPT 1 cohort</span><span class="deal-amt">$5,050</span><span class="deal-badge badge-lost">Lost</span></div>
-          <div class="deal-section-header" style="color:var(--accent);">Open Pipeline (14) -- $97,590 ARR</div>
-          <div class="deal-row"><span class="deal-seats">184</span><span class="deal-name">USC DPT 3 cohorts</span><span class="deal-amt">$23,700</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">92</span><span class="deal-name">George Fox DPT</span><span class="deal-amt">$11,850</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">61</span><span class="deal-name">South College DPT</span><span class="deal-amt">$7,900</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">59</span><span class="deal-name">San Diego Mesa College PTA</span><span class="deal-amt">$7,575</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">59</span><span class="deal-name">Harrisburg University DPT program</span><span class="deal-amt">$7,575</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">39</span><span class="deal-name">Pacific U DPT 1 cohort</span><span class="deal-amt">$5,050</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">39</span><span class="deal-name">University of Hartford DPT</span><span class="deal-amt">$5,050</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">39</span><span class="deal-name">University of St. Augustine FL DPT</span><span class="deal-amt">$5,050</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">39</span><span class="deal-name">San Diego State University (SDSU) DPT 1 cohort</span><span class="deal-amt">$5,050</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">39</span><span class="deal-name">UNLV DPT 1 cohort</span><span class="deal-amt">$5,050</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">39</span><span class="deal-name">OIT/OHSU DPT program</span><span class="deal-amt">$5,050</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">31</span><span class="deal-name">High Point University DPT</span><span class="deal-amt">$3,950</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">18</span><span class="deal-name">UT MSAT program</span><span class="deal-amt">$2,370</span><span class="deal-badge badge-open">Open</span></div>
-          <div class="deal-row"><span class="deal-seats">18</span><span class="deal-name">Mount Saint Mary's University DPT</span><span class="deal-amt">$2,370</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-sub">
+            <div class="deal-sub-toggle" onclick="toggleSubDeals('g6-won')">
+              <span class="deal-sub-arrow" id="sub-arrow-g6-won">&#9654;</span>
+              <span class="deal-sub-label" style="color: var(--green);">Won (1)</span>
+              <span class="deal-sub-meta">-- $2,375 ARR</span>
+            </div>
+            <ul class="deal-sub-list" id="sub-deals-g6-won">
+              <li><span class="deal-bullet-seats">18 seats</span> <span class="deal-bullet-name">North Kitsap High School Sports Med</span> <span class="deal-bullet-amt">$2,375</span></li>
+            </ul>
+          </div>
+          <div class="deal-sub">
+            <div class="deal-sub-toggle" onclick="toggleSubDeals('g6-lost')">
+              <span class="deal-sub-arrow" id="sub-arrow-g6-lost">&#9654;</span>
+              <span class="deal-sub-label" style="color: var(--red);">Lost (1)</span>
+              <span class="deal-sub-meta">-- $5,050 ARR</span>
+            </div>
+            <ul class="deal-sub-list" id="sub-deals-g6-lost">
+              <li><span class="deal-bullet-seats">39 seats</span> <span class="deal-bullet-name">Pacific Northwest University DPT 1 cohort</span> <span class="deal-bullet-amt">$5,050</span></li>
+            </ul>
+          </div>
+          <div class="deal-sub">
+            <div class="deal-sub-toggle" onclick="toggleSubDeals('g6-open')">
+              <span class="deal-sub-arrow" id="sub-arrow-g6-open">&#9654;</span>
+              <span class="deal-sub-label" style="color: var(--accent);">Open Pipeline (14)</span>
+              <span class="deal-sub-meta">-- $97,590 ARR</span>
+            </div>
+            <ul class="deal-sub-list" id="sub-deals-g6-open">
+              <li><span class="deal-bullet-seats">184 seats</span> <span class="deal-bullet-name">USC DPT 3 cohorts</span> <span class="deal-bullet-amt">$23,700</span></li>
+              <li><span class="deal-bullet-seats">92 seats</span> <span class="deal-bullet-name">George Fox DPT</span> <span class="deal-bullet-amt">$11,850</span></li>
+              <li><span class="deal-bullet-seats">61 seats</span> <span class="deal-bullet-name">South College DPT</span> <span class="deal-bullet-amt">$7,900</span></li>
+              <li><span class="deal-bullet-seats">59 seats</span> <span class="deal-bullet-name">San Diego Mesa College PTA</span> <span class="deal-bullet-amt">$7,575</span></li>
+              <li><span class="deal-bullet-seats">59 seats</span> <span class="deal-bullet-name">Harrisburg University DPT program</span> <span class="deal-bullet-amt">$7,575</span></li>
+              <li><span class="deal-bullet-seats">39 seats</span> <span class="deal-bullet-name">Pacific U DPT 1 cohort</span> <span class="deal-bullet-amt">$5,050</span></li>
+              <li><span class="deal-bullet-seats">39 seats</span> <span class="deal-bullet-name">University of Hartford DPT</span> <span class="deal-bullet-amt">$5,050</span></li>
+              <li><span class="deal-bullet-seats">39 seats</span> <span class="deal-bullet-name">University of St. Augustine FL DPT</span> <span class="deal-bullet-amt">$5,050</span></li>
+              <li><span class="deal-bullet-seats">39 seats</span> <span class="deal-bullet-name">San Diego State University (SDSU) DPT 1 cohort</span> <span class="deal-bullet-amt">$5,050</span></li>
+              <li><span class="deal-bullet-seats">39 seats</span> <span class="deal-bullet-name">UNLV DPT 1 cohort</span> <span class="deal-bullet-amt">$5,050</span></li>
+              <li><span class="deal-bullet-seats">39 seats</span> <span class="deal-bullet-name">OIT/OHSU DPT program</span> <span class="deal-bullet-amt">$5,050</span></li>
+              <li><span class="deal-bullet-seats">31 seats</span> <span class="deal-bullet-name">High Point University DPT</span> <span class="deal-bullet-amt">$3,950</span></li>
+              <li><span class="deal-bullet-seats">18 seats</span> <span class="deal-bullet-name">UT MSAT program</span> <span class="deal-bullet-amt">$2,370</span></li>
+              <li><span class="deal-bullet-seats">18 seats</span> <span class="deal-bullet-name">Mount Saint Mary's University DPT</span> <span class="deal-bullet-amt">$2,370</span></li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -1186,6 +1389,7 @@
     </section>
 
 
+
   </div>
 </div>
 
@@ -1215,16 +1419,20 @@
     });
   });
 
-  // Toggle deal lists
+  // Toggle deal lists (main group)
   function toggleDeals(id) {
     const deals = document.getElementById('deals-' + id);
     const arrow = document.getElementById('arrow-' + id);
-    if (deals) {
-      deals.classList.toggle('open');
-    }
-    if (arrow) {
-      arrow.classList.toggle('open');
-    }
+    if (deals) deals.classList.toggle('open');
+    if (arrow) arrow.classList.toggle('open');
+  }
+
+  // Toggle sub-deal lists (Won/Lost/Open within a group)
+  function toggleSubDeals(id) {
+    const list = document.getElementById('sub-deals-' + id);
+    const arrow = document.getElementById('sub-arrow-' + id);
+    if (list) list.classList.toggle('open');
+    if (arrow) arrow.classList.toggle('open');
   }
 </script>
 
