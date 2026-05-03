@@ -735,254 +735,366 @@
     <!-- CUSTOMER PROFILES -->
     <section id="customer-profiles">
       <h2>Customer Profiles</h2>
-      <p class="subtitle">5 ICP segments ranked by ease of close -- demographics, gaps, and what moves the needle</p>
+      <p class="subtitle">6 ICP segments ranked by ease of close -- demographics, gaps, deal pipeline from HubSpot (133 new business deals)</p>
 
-      <!-- Overview bar chart -->
       <div class="card" style="margin-bottom: 24px;">
-        <h3 style="margin-bottom: 20px; font-size: 16px;">Close Rate by Segment</h3>
+        <h3 style="margin-bottom: 6px; font-size: 16px;">Close Rate by Segment</h3>
+        <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 18px;">Mike's estimate vs actual HubSpot data (all-time new business)</p>
         <div style="display: flex; flex-direction: column; gap: 14px;">
           <div>
             <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
-              <span>1. Small Clinics</span><span style="color: var(--green); font-weight: 600;">60%</span>
+              <span>1. Small Clinics &amp; ATC (&le;5)</span>
+              <span><span style="color: var(--text-muted); font-size: 11px;">Mike: 60%</span> &nbsp;<span style="color: var(--green); font-weight: 600;">Actual: 76%</span></span>
             </div>
-            <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden;">
-              <div style="width: 60%; height: 100%; background: var(--green); border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 11px; font-weight: 600; color: #0f1117;">Inbound-driven, ≤5 clinicians</div>
-            </div>
-          </div>
-          <div>
-            <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
-              <span>2. Large AT Departments</span><span style="color: var(--yellow); font-weight: 600;">40%</span>
-            </div>
-            <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden;">
-              <div style="width: 40%; height: 100%; background: var(--yellow); border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 11px; font-weight: 600; color: #0f1117;">Avg 15 people</div>
+            <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden; position: relative;">
+              <div style="width: 60%; height: 100%; background: rgba(255,255,255,0.08); border-radius: 6px; position: absolute;"></div>
+              <div style="width: 76%; height: 100%; background: var(--green); border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 11px; font-weight: 600; color: #0f1117; position: relative;">39W / 12L / 21 open</div>
             </div>
           </div>
           <div>
             <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
-              <span>3. Large PT Chains (multi-clinic)</span><span style="color: var(--orange); font-weight: 600;">25%</span>
+              <span>2. Medium Clinics &amp; ATC (6-10)</span>
+              <span><span style="color: var(--accent); font-size: 11px;">New segment</span> &nbsp;<span style="color: var(--green); font-weight: 600;">Actual: 80%</span></span>
             </div>
-            <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden;">
-              <div style="width: 25%; height: 100%; background: var(--orange); border-radius: 6px;"></div>
-            </div>
-          </div>
-          <div>
-            <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
-              <span>4. Enterprise Hospital Systems</span><span style="color: var(--red); font-weight: 600;">0%</span>
-            </div>
-            <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden;">
-              <div style="width: 2%; height: 100%; background: var(--red); border-radius: 6px;"></div>
+            <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden; position: relative;">
+              <div style="width: 80%; height: 100%; background: var(--green); border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 11px; font-weight: 600; color: #0f1117; position: relative;">8W / 2L / 10 open</div>
             </div>
           </div>
           <div>
             <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
-              <span>5. Schools (DPT, MSAT, PTA)</span><span style="color: var(--red); font-weight: 600;">0%</span>
+              <span>3. Large AT Departments (&gt;10)</span>
+              <span><span style="color: var(--text-muted); font-size: 11px;">Mike: 40%</span> &nbsp;<span style="color: var(--yellow); font-weight: 600;">Actual: 50%*</span></span>
+            </div>
+            <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden; position: relative;">
+              <div style="width: 40%; height: 100%; background: rgba(255,255,255,0.08); border-radius: 6px; position: absolute;"></div>
+              <div style="width: 50%; height: 100%; background: var(--yellow); border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 11px; font-weight: 600; color: #0f1117; position: relative;">1W / 1L / 7 open</div>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+              <span>4. Large PT Chains (&gt;10)</span>
+              <span><span style="color: var(--text-muted); font-size: 11px;">Mike: 25%</span> &nbsp;<span style="color: var(--orange); font-weight: 600;">Actual: 38%</span></span>
+            </div>
+            <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden; position: relative;">
+              <div style="width: 25%; height: 100%; background: rgba(255,255,255,0.08); border-radius: 6px; position: absolute;"></div>
+              <div style="width: 38%; height: 100%; background: var(--orange); border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 11px; font-weight: 600; color: #0f1117; position: relative;">3W / 5L / 5 open</div>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+              <span>5. Enterprise Hospital</span>
+              <span><span style="color: var(--text-muted); font-size: 11px;">Mike: 0%</span> &nbsp;<span style="color: var(--red); font-weight: 600;">Actual: N/A</span></span>
             </div>
             <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden;">
-              <div style="width: 2%; height: 100%; background: var(--red); border-radius: 6px;"></div>
+              <div style="width: 100%; height: 100%; display: flex; align-items: center; padding-left: 10px; font-size: 11px; color: var(--text-muted);">0W / 0L / 4 open</div>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+              <span>6. Schools (DPT, MSAT, PTA)</span>
+              <span><span style="color: var(--text-muted); font-size: 11px;">Mike: 0%</span> &nbsp;<span style="color: var(--red); font-weight: 600;">Actual: 0%</span></span>
+            </div>
+            <div style="background: var(--border); border-radius: 6px; height: 24px; overflow: hidden;">
+              <div style="width: 100%; height: 100%; display: flex; align-items: center; padding-left: 10px; font-size: 11px; color: var(--text-muted);">0W / 1L / 14 open</div>
             </div>
           </div>
         </div>
+        <p style="color: var(--text-muted); font-size: 11px; margin-top: 12px;">* Small sample size. Ghost bar = Mike's estimate. Solid bar = actual HubSpot close rate.</p>
       </div>
 
-      <!-- GROUP 1: Small Clinics -->
+      <!-- GROUP 1 -->
       <div class="card" style="margin-bottom: 20px; border-left: 3px solid var(--green);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-          <h3 style="font-size: 16px;">Group 1: Small Outpatient & Sports PT/AT Clinics</h3>
-          <span style="background: var(--green); color: #0f1117; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">60% Close</span>
+        <div class="seg-toggle" onclick="toggleDeals('g1')">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <h3 style="font-size: 16px;"><span class="seg-arrow" id="arrow-g1">&#9654;</span>Group 1: Small Clinics &amp; ATC (&le;5 seats)</h3>
+            <span style="background: var(--green); color: #0f1117; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">76% Close (39W/12L)</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 14px;">Primarily inbound, &le;5 seats. Avg deal ~2.4 seats. 30+ of 39 wins are 1-3 seats. Click to expand deals.</p>
         </div>
-        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">≤5 clinicians, primarily inbound. Easiest to close -- this is where we generate cash now.</p>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
           <div>
             <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Product Gaps</h4>
             <ul style="padding-left: 16px; font-size: 14px; color: var(--text-muted);">
               <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Missing videos</strong> -- used to platforms that have everything</li>
-              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">YT video links / photos</strong> -- workaround for missing content</li>
-              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Custom video filming</strong> -- us filming for them is a bigger value-add than uploading</li>
-              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">No EMR integration</strong> -- recently changed EMR or about to invest in one</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Custom video filming</strong> -- us filming for them &gt; uploading</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">No EMR integration</strong> -- recently changed or about to invest</li>
             </ul>
           </div>
           <div>
             <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Close Rate Impact If Fixed</h4>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Groups / Patients Tab</span><span style="color: var(--green);">+15%</span></div>
-                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 15%; height: 100%; background: var(--green); border-radius: 4px;"></div></div>
-              </div>
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Videos / Content</span><span style="color: var(--green);">+15%</span></div>
-                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 15%; height: 100%; background: var(--green); border-radius: 4px;"></div></div>
-              </div>
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>EMR Integration</span><span style="color: var(--yellow);">+10%</span></div>
-                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 10%; height: 100%; background: var(--yellow); border-radius: 4px;"></div></div>
-              </div>
-            </div>
-            <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">Potential close rate if all fixed: <strong style="color: var(--green);">~100%</strong></p>
+            <div class="gap-bar-row"><span class="gap-label">Groups / Patients Tab</span><div class="gap-bar-track"><div class="gap-bar-fill" style="width:30%;background:var(--green);"></div></div><span class="gap-pct" style="color:var(--green);">+15%</span></div>
+            <div class="gap-bar-row"><span class="gap-label">Videos / Content</span><div class="gap-bar-track"><div class="gap-bar-fill" style="width:30%;background:var(--green);"></div></div><span class="gap-pct" style="color:var(--green);">+15%</span></div>
+            <div class="gap-bar-row"><span class="gap-label">EMR Integration</span><div class="gap-bar-track"><div class="gap-bar-fill" style="width:20%;background:var(--yellow);"></div></div><span class="gap-pct" style="color:var(--yellow);">+10%</span></div>
           </div>
+        </div>
+
+        <div class="seg-deals" id="deals-g1">
+          <div class="deal-section-header" style="color:var(--green);">Won (39) -- $11,893 ARR</div>
+          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">UNC Football Sports Medicine</span><span class="deal-amt">$645</span><span class="deal-badge badge-won">Won</span></div>
+          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Dynamic Physical Therapy</span><span class="deal-amt">$645</span><span class="deal-badge badge-won">Won</span></div>
+          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Tyler Legacy HS</span><span class="deal-amt">$645</span><span class="deal-badge badge-won">Won</span></div>
+          <div class="deal-row"><span class="deal-seats">4</span><span class="deal-name">Apex Physical Therapy</span><span class="deal-amt">$516</span><span class="deal-badge badge-won">Won</span></div>
+          <div class="deal-row"><span class="deal-seats">4</span><span class="deal-name">Placentia-Yorba Linda Unified School District</span><span class="deal-amt">$516</span><span class="deal-badge badge-won">Won</span></div>
+          <div class="deal-row"><span class="deal-seats">4</span><span class="deal-name">Westmoore High School District</span><span class="deal-amt">$516</span><span class="deal-badge badge-won">Won</span></div>
+          <div class="deal-row"><span class="deal-seats">1-4</span><span class="deal-name">Soar Physical Therapy, Recon Perform, Bowdin College, Georgian University, +29 more</span><span class="deal-amt">33 deals / $8,410</span><span class="deal-badge badge-won">Won</span></div>
+          <div class="deal-section-header" style="color:var(--red);">Lost (12) -- $5,735 ARR</div>
+          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">PT Solutions Georgia</span><span class="deal-amt">$645</span><span class="deal-badge badge-lost">Lost</span></div>
+          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Duke Health</span><span class="deal-amt">$645</span><span class="deal-badge badge-lost">Lost</span></div>
+          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Evolve PT</span><span class="deal-amt">$645</span><span class="deal-badge badge-lost">Lost</span></div>
+          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Kimberly Salinas</span><span class="deal-amt">$645</span><span class="deal-badge badge-lost">Lost</span></div>
+          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Coast Physical Therapy & Sports Medicine</span><span class="deal-amt">$645</span><span class="deal-badge badge-lost">Lost</span></div>
+          <div class="deal-row"><span class="deal-seats">4</span><span class="deal-name">Tanner Strommen & co.</span><span class="deal-amt">$575</span><span class="deal-badge badge-lost">Lost</span></div>
+          <div class="deal-row"><span class="deal-seats">1-4</span><span class="deal-name">PhysioStrong yr1, The Sports MedicTT, Mentor Clinic, Pondera Rehab & Fitness, +2 more</span><span class="deal-amt">6 deals / $1,935</span><span class="deal-badge badge-lost">Lost</span></div>
+          <div class="deal-section-header" style="color:var(--accent);">Open Pipeline (21) -- $10,020 ARR</div>
+          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Ultimate Edge Sports Medicine</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Forte Physical Therapy & Performance</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">APEX PWR</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Tyre Physical Therapy & Performance</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">One Brooklyn Health</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Performance Care Centre</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Vassar College ATC</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Peak Movement</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">ROKKE PT</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">Sports Rehab Center</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">1-4</span><span class="deal-name">St. Olaf College ATC, Arlington ISD, Alicia Romanko coaching group, Katy ISD, +7 more</span><span class="deal-amt">11 deals / $3,570</span><span class="deal-badge badge-open">Open</span></div>
         </div>
       </div>
 
-      <!-- GROUP 2: Large AT Departments -->
+      <!-- GROUP 2 -->
+      <div class="card" style="margin-bottom: 20px; border-left: 3px solid var(--green);">
+        <div class="seg-toggle" onclick="toggleDeals('g2')">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <h3 style="font-size: 16px;"><span class="seg-arrow" id="arrow-g2">&#9654;</span>Group 2: Medium Clinics &amp; ATC (6-10 seats)</h3>
+            <span style="background: var(--green); color: #0f1117; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">80% Close (8W/2L)</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 14px;">Sweet spot: high close rate + 3x avg deal size vs small. Avg deal ~7 seats. Click to expand deals.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
+          <div>
+            <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Product Gaps</h4>
+            <ul style="padding-left: 16px; font-size: 14px; color: var(--text-muted);">
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Missing videos</strong> -- bigger library expectations at this size</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Custom video uploads</strong> -- own exercise demos + protocols</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">EMR integration</strong> -- operational at multi-provider clinics</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Close Rate Impact If Fixed</h4>
+            <div class="gap-bar-row"><span class="gap-label">Groups / Patients Tab</span><div class="gap-bar-track"><div class="gap-bar-fill" style="width:30%;background:var(--green);"></div></div><span class="gap-pct" style="color:var(--green);">+15%</span></div>
+            <div class="gap-bar-row"><span class="gap-label">Videos / Content</span><div class="gap-bar-track"><div class="gap-bar-fill" style="width:30%;background:var(--green);"></div></div><span class="gap-pct" style="color:var(--green);">+15%</span></div>
+            <div class="gap-bar-row"><span class="gap-label">EMR Integration</span><div class="gap-bar-track"><div class="gap-bar-fill" style="width:30%;background:var(--yellow);"></div></div><span class="gap-pct" style="color:var(--yellow);">+15%</span></div>
+          </div>
+        </div>
+
+        <div class="seg-deals" id="deals-g2">
+          <div class="deal-section-header" style="color:var(--green);">Won (8) -- $7,227 ARR</div>
+          <div class="deal-row"><span class="deal-seats">9</span><span class="deal-name">Precision Physical Therapy and Sports Rehab</span><span class="deal-amt">$1,161</span><span class="deal-badge badge-won">Won</span></div>
+          <div class="deal-row"><span class="deal-seats">8</span><span class="deal-name">Blue Valley ISD</span><span class="deal-amt">$1,032</span><span class="deal-badge badge-won">Won</span></div>
+          <div class="deal-row"><span class="deal-seats">8</span><span class="deal-name">Coltman and Baughman Physical Therapy</span><span class="deal-amt">$1,035</span><span class="deal-badge badge-won">Won</span></div>
+          <div class="deal-row"><span class="deal-seats">7</span><span class="deal-name">Wichita Public Schools Athletics</span><span class="deal-amt">$903</span><span class="deal-badge badge-won">Won</span></div>
+          <div class="deal-row"><span class="deal-seats">6</span><span class="deal-name">John Furey</span><span class="deal-amt">$774</span><span class="deal-badge badge-won">Won</span></div>
+          <div class="deal-row"><span class="deal-seats">6</span><span class="deal-name">Kansas Orthopaedic Center</span><span class="deal-amt">$774</span><span class="deal-badge badge-won">Won</span></div>
+          <div class="deal-row"><span class="deal-seats">6</span><span class="deal-name">REV PT & Sports Medicine</span><span class="deal-amt">$774</span><span class="deal-badge badge-won">Won</span></div>
+          <div class="deal-row"><span class="deal-seats">6</span><span class="deal-name">Prairie View A&M University Athletics</span><span class="deal-amt">$774</span><span class="deal-badge badge-won">Won</span></div>
+          <div class="deal-section-header" style="color:var(--red);">Lost (2) -- $1,677 ARR</div>
+          <div class="deal-row"><span class="deal-seats">7</span><span class="deal-name">Amherst College ATC</span><span class="deal-amt">$903</span><span class="deal-badge badge-lost">Lost</span></div>
+          <div class="deal-row"><span class="deal-seats">6</span><span class="deal-name">Bentonville HS ATC</span><span class="deal-amt">$774</span><span class="deal-badge badge-lost">Lost</span></div>
+          <div class="deal-section-header" style="color:var(--accent);">Open Pipeline (10) -- $10,910 ARR</div>
+          <div class="deal-row"><span class="deal-seats">10</span><span class="deal-name">Virginia Tech ATC</span><span class="deal-amt">$1,290</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">10</span><span class="deal-name">Barraco Physiotherapy</span><span class="deal-amt">$1,290</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">9</span><span class="deal-name">Tennessee Orthopedics Alliance</span><span class="deal-amt">$1,150</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">9</span><span class="deal-name">University of Tennessee</span><span class="deal-amt">$1,150</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">9</span><span class="deal-name">Orange County Physical Therapy</span><span class="deal-amt">$1,150</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">9</span><span class="deal-name">Staszak Physical Therapy</span><span class="deal-amt">$1,150</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">9</span><span class="deal-name">Cascade Sports Injury Prevention & Physical Therapy</span><span class="deal-amt">$1,150</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">8</span><span class="deal-name">Headquarters PT</span><span class="deal-amt">$1,032</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">6</span><span class="deal-name">Empower PT and Fitness</span><span class="deal-amt">$774</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">6</span><span class="deal-name">Georgia Tech Athletics</span><span class="deal-amt">$774</span><span class="deal-badge badge-open">Open</span></div>
+        </div>
+      </div>
+
+      <!-- GROUP 3 -->
       <div class="card" style="margin-bottom: 20px; border-left: 3px solid var(--yellow);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-          <h3 style="font-size: 16px;">Group 2: Large College/University AT Departments</h3>
-          <span style="background: var(--yellow); color: #0f1117; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">40% Close</span>
+        <div class="seg-toggle" onclick="toggleDeals('g3')">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <h3 style="font-size: 16px;"><span class="seg-arrow" id="arrow-g3">&#9654;</span>Group 3: Large AT Departments (&gt;10 seats)</h3>
+            <span style="background: var(--yellow); color: #0f1117; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">50% Close (1W/1L)</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 14px;">College/university AT depts, 10+ seats. Avg 15 seats. Strong pipeline: 7 open deals. Click to expand deals.</p>
         </div>
-        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">Athletic training departments at colleges and universities. Avg group size: 15 people.</p>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
           <div>
             <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Product Gaps</h4>
             <ul style="padding-left: 16px; font-size: 14px; color: var(--text-muted);">
-              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">AMS integration</strong> -- need to connect with athletic management systems</li>
-              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Custom branding</strong> -- white-label or program-branded experience</li>
-              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Custom video uploads</strong> -- upload their own exercise content</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">AMS integration</strong> -- athletic management systems (Teamworks, ARMS)</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Custom branding</strong> -- white-label experience for department</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Custom video uploads</strong> -- sport-specific protocols</li>
             </ul>
           </div>
           <div>
             <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Close Rate Impact If Fixed</h4>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Groups / Patients Tab</span><span style="color: var(--green);">+20%</span></div>
-                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 20%; height: 100%; background: var(--green); border-radius: 4px;"></div></div>
-              </div>
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>AMS Integration</span><span style="color: var(--green);">+20%</span></div>
-                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 20%; height: 100%; background: var(--green); border-radius: 4px;"></div></div>
-              </div>
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Custom Branding</span><span style="color: var(--yellow);">+10%</span></div>
-                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 10%; height: 100%; background: var(--yellow); border-radius: 4px;"></div></div>
-              </div>
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Video Uploads</span><span style="color: var(--yellow);">+10%</span></div>
-                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 10%; height: 100%; background: var(--yellow); border-radius: 4px;"></div></div>
-              </div>
-            </div>
-            <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">Potential close rate if all fixed: <strong style="color: var(--green);">~100%</strong></p>
+            <div class="gap-bar-row"><span class="gap-label">Groups / Patients Tab</span><div class="gap-bar-track"><div class="gap-bar-fill" style="width:40%;background:var(--green);"></div></div><span class="gap-pct" style="color:var(--green);">+20%</span></div>
+            <div class="gap-bar-row"><span class="gap-label">AMS Integration</span><div class="gap-bar-track"><div class="gap-bar-fill" style="width:40%;background:var(--green);"></div></div><span class="gap-pct" style="color:var(--green);">+20%</span></div>
+            <div class="gap-bar-row"><span class="gap-label">Custom Branding</span><div class="gap-bar-track"><div class="gap-bar-fill" style="width:20%;background:var(--yellow);"></div></div><span class="gap-pct" style="color:var(--yellow);">+10%</span></div>
+            <div class="gap-bar-row"><span class="gap-label">Video Uploads</span><div class="gap-bar-track"><div class="gap-bar-fill" style="width:20%;background:var(--yellow);"></div></div><span class="gap-pct" style="color:var(--yellow);">+10%</span></div>
           </div>
+        </div>
+
+        <div class="seg-deals" id="deals-g3">
+          <div class="deal-section-header" style="color:var(--green);">Won (1) -- $2,375 ARR</div>
+          <div class="deal-row"><span class="deal-seats">18</span><span class="deal-name">North Kitsap High School Sports Med</span><span class="deal-amt">$2,375</span><span class="deal-badge badge-won">Won</span></div>
+          <div class="deal-section-header" style="color:var(--red);">Lost (1) -- $1,380 ARR</div>
+          <div class="deal-row"><span class="deal-seats">11</span><span class="deal-name">San Jose State University ATC</span><span class="deal-amt">$1,380</span><span class="deal-badge badge-lost">Lost</span></div>
+          <div class="deal-section-header" style="color:var(--accent);">Open Pipeline (7) -- $14,030 ARR</div>
+          <div class="deal-row"><span class="deal-seats">23</span><span class="deal-name">Orlando County Public Schools Athletics</span><span class="deal-amt">$3,030</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">21</span><span class="deal-name">University of Michigan Athletic Department</span><span class="deal-amt">$2,700</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">13</span><span class="deal-name">UC Davis ATC</span><span class="deal-amt">$1,725</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">13</span><span class="deal-name">Stanford Athletics ATC</span><span class="deal-amt">$1,725</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">13</span><span class="deal-name">UC San Diego (UCSD) ATC</span><span class="deal-amt">$1,725</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">12</span><span class="deal-name">Kamehameha Schools - ATC</span><span class="deal-amt">$1,610</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">12</span><span class="deal-name">UNC Olympic Sports</span><span class="deal-amt">$1,515</span><span class="deal-badge badge-open">Open</span></div>
         </div>
       </div>
 
-      <!-- GROUP 3: Large PT Chains -->
+      <!-- GROUP 4 -->
       <div class="card" style="margin-bottom: 20px; border-left: 3px solid var(--orange);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-          <h3 style="font-size: 16px;">Group 3: Large PT Chains (Multi-Clinic)</h3>
-          <span style="background: var(--orange); color: #0f1117; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">25% Close</span>
+        <div class="seg-toggle" onclick="toggleDeals('g4')">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <h3 style="font-size: 16px;"><span class="seg-arrow" id="arrow-g4">&#9654;</span>Group 4: Large PT Chains (&gt;10 seats)</h3>
+            <span style="background: var(--orange); color: #0f1117; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">38% Close (3W/5L)</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 14px;">Multi-location PT orgs. Win 10-23 seats, lose 25+. Video/templates matter most. Click to expand deals.</p>
         </div>
-        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">Multi-location physical therapy chains. Similar to enterprise hospital but video/templates matter more. More accessible than hospital systems.</p>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
           <div>
             <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Product Gaps</h4>
             <ul style="padding-left: 16px; font-size: 14px; color: var(--text-muted);">
-              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">EMR integration</strong> -- embedded in existing clinical systems</li>
-              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">CEUs</strong> -- continuing education credits for staff</li>
-              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Custom videos</strong> -- need to upload their own content</li>
-              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Shared patients / templates</strong> -- team collaboration features</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">EMR integration</strong> -- embedded in clinical systems</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">CEUs</strong> -- continuing ed for staff</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Custom videos</strong> -- upload own content at scale</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Shared patients / templates</strong> -- multi-clinic workflows</li>
             </ul>
           </div>
           <div>
             <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Close Rate Impact If Fixed</h4>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>EMR Integration</span><span style="color: var(--green);">+50%</span></div>
-                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 50%; height: 100%; background: var(--green); border-radius: 4px;"></div></div>
-              </div>
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>CEUs</span><span style="color: var(--green);">+20%</span></div>
-                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 20%; height: 100%; background: var(--green); border-radius: 4px;"></div></div>
-              </div>
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Custom Videos</span><span style="color: var(--green);">+20%</span></div>
-                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 20%; height: 100%; background: var(--green); border-radius: 4px;"></div></div>
-              </div>
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Patients / Templates</span><span style="color: var(--yellow);">+15%</span></div>
-                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 15%; height: 100%; background: var(--yellow); border-radius: 4px;"></div></div>
-              </div>
-            </div>
-            <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">Potential close rate if all fixed: <strong style="color: var(--green);">~100%+</strong></p>
+            <div class="gap-bar-row"><span class="gap-label">EMR Integration</span><div class="gap-bar-track"><div class="gap-bar-fill" style="width:100%;background:var(--green);"></div></div><span class="gap-pct" style="color:var(--green);">+50%</span></div>
+            <div class="gap-bar-row"><span class="gap-label">CEUs</span><div class="gap-bar-track"><div class="gap-bar-fill" style="width:40%;background:var(--green);"></div></div><span class="gap-pct" style="color:var(--green);">+20%</span></div>
+            <div class="gap-bar-row"><span class="gap-label">Custom Videos</span><div class="gap-bar-track"><div class="gap-bar-fill" style="width:40%;background:var(--green);"></div></div><span class="gap-pct" style="color:var(--green);">+20%</span></div>
+            <div class="gap-bar-row"><span class="gap-label">Patients / Templates</span><div class="gap-bar-track"><div class="gap-bar-fill" style="width:30%;background:var(--yellow);"></div></div><span class="gap-pct" style="color:var(--yellow);">+15%</span></div>
           </div>
+        </div>
+
+        <div class="seg-deals" id="deals-g4">
+          <div class="deal-section-header" style="color:var(--green);">Won (3) -- $6,255 ARR</div>
+          <div class="deal-row"><span class="deal-seats">23</span><span class="deal-name">The University of Texas at San Antonio Department of Orthopaedics</span><span class="deal-amt">$3,030</span><span class="deal-badge badge-won">Won</span></div>
+          <div class="deal-row"><span class="deal-seats">13</span><span class="deal-name">Los Gatos Orthopedic Sports Therapy</span><span class="deal-amt">$1,725</span><span class="deal-badge badge-won">Won</span></div>
+          <div class="deal-row"><span class="deal-seats">12</span><span class="deal-name">ReEnvision Physical Therapy</span><span class="deal-amt">$1,500</span><span class="deal-badge badge-won">Won</span></div>
+          <div class="deal-section-header" style="color:var(--red);">Lost (5) -- $13,442 ARR</div>
+          <div class="deal-row"><span class="deal-seats">37</span><span class="deal-name">Sport Med</span><span class="deal-amt">$4,740</span><span class="deal-badge badge-lost">Lost</span></div>
+          <div class="deal-row"><span class="deal-seats">25</span><span class="deal-name">Quinn Orthopedic Physical Therapy</span><span class="deal-amt">$3,232</span><span class="deal-badge badge-lost">Lost</span></div>
+          <div class="deal-row"><span class="deal-seats">16</span><span class="deal-name">Promotion Physical Therapy</span><span class="deal-amt">$2,020</span><span class="deal-badge badge-lost">Lost</span></div>
+          <div class="deal-row"><span class="deal-seats">13</span><span class="deal-name">Cherokee Regional Medical Center</span><span class="deal-amt">$1,725</span><span class="deal-badge badge-lost">Lost</span></div>
+          <div class="deal-row"><span class="deal-seats">13</span><span class="deal-name">Sidney Regional Medical Center</span><span class="deal-amt">$1,725</span><span class="deal-badge badge-lost">Lost</span></div>
+          <div class="deal-section-header" style="color:var(--accent);">Open Pipeline (5) -- $32,765 ARR</div>
+          <div class="deal-row"><span class="deal-seats">155</span><span class="deal-name">InMotion Physical Therapy</span><span class="deal-amt">$20,000</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">31</span><span class="deal-name">MyoDetox Team</span><span class="deal-amt">$4,000</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">31</span><span class="deal-name">Ortho NC</span><span class="deal-amt">$4,040</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">20</span><span class="deal-name">Therapeutic Associates inc (TAI)</span><span class="deal-amt">$2,525</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">17</span><span class="deal-name">FX Physical Therapy Expansion</span><span class="deal-amt">$2,200</span><span class="deal-badge badge-open">Open</span></div>
         </div>
       </div>
 
-      <!-- GROUP 4: Enterprise Hospital Systems -->
+      <!-- GROUP 5 -->
       <div class="card" style="margin-bottom: 20px; border-left: 3px solid var(--red);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-          <h3 style="font-size: 16px;">Group 4: Enterprise Hospital Systems</h3>
-          <span style="background: var(--red); color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">0% Close</span>
+        <div class="seg-toggle" onclick="toggleDeals('g5')">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <h3 style="font-size: 16px;"><span class="seg-arrow" id="arrow-g5">&#9654;</span>Group 5: Enterprise Hospital Systems</h3>
+            <span style="background: var(--red); color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">No Closes (4 open)</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 14px;">Hundreds of PTs, embedded in Medbridge/Epic. No closed deals yet -- 4 in pipeline. Click to expand deals.</p>
         </div>
-        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">Hundreds of PTs, deeply embedded in Medbridge and Epic -- even when their ortho/sports departments don't use Medbridge at all.</p>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
           <div>
             <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Product Gaps</h4>
             <ul style="padding-left: 16px; font-size: 14px; color: var(--text-muted);">
               <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Epic integration</strong> -- institutional mandate, non-negotiable</li>
-              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">CEUs</strong> -- continuing education is a procurement checkbox</li>
-              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Custom videos</strong> -- need to upload their own content at scale</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">CEUs</strong> -- procurement checkbox</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Custom videos</strong> -- upload at scale</li>
             </ul>
           </div>
           <div>
             <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Close Rate Impact If Fixed</h4>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Epic Integration</span><span style="color: var(--green);">+50%</span></div>
-                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 50%; height: 100%; background: var(--green); border-radius: 4px;"></div></div>
-              </div>
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>CEUs</span><span style="color: var(--green);">+25%</span></div>
-                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 25%; height: 100%; background: var(--green); border-radius: 4px;"></div></div>
-              </div>
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Custom Videos</span><span style="color: var(--green);">+20%</span></div>
-                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 20%; height: 100%; background: var(--green); border-radius: 4px;"></div></div>
-              </div>
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Groups / Patients Tab</span><span style="color: var(--yellow);">+15%</span></div>
-                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 15%; height: 100%; background: var(--yellow); border-radius: 4px;"></div></div>
-              </div>
-            </div>
-            <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">Potential close rate if all fixed: <strong style="color: var(--yellow);">~90%+</strong> (procurement complexity remains)</p>
+            <div class="gap-bar-row"><span class="gap-label">Epic Integration</span><div class="gap-bar-track"><div class="gap-bar-fill" style="width:100%;background:var(--green);"></div></div><span class="gap-pct" style="color:var(--green);">+50%</span></div>
+            <div class="gap-bar-row"><span class="gap-label">CEUs</span><div class="gap-bar-track"><div class="gap-bar-fill" style="width:50%;background:var(--green);"></div></div><span class="gap-pct" style="color:var(--green);">+25%</span></div>
+            <div class="gap-bar-row"><span class="gap-label">Custom Videos</span><div class="gap-bar-track"><div class="gap-bar-fill" style="width:40%;background:var(--green);"></div></div><span class="gap-pct" style="color:var(--green);">+20%</span></div>
+            <div class="gap-bar-row"><span class="gap-label">Groups / Patients Tab</span><div class="gap-bar-track"><div class="gap-bar-fill" style="width:30%;background:var(--yellow);"></div></div><span class="gap-pct" style="color:var(--yellow);">+15%</span></div>
           </div>
+        </div>
+
+        <div class="seg-deals" id="deals-g5">
+          <div class="deal-section-header" style="color:var(--accent);">Open Pipeline (4) -- $11,225 ARR</div>
+          <div class="deal-row"><span class="deal-seats">39</span><span class="deal-name">Memorial Hermann Group</span><span class="deal-amt">$5,050</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">23</span><span class="deal-name">University Hospitals Sports Medicine (Cleveland)</span><span class="deal-amt">$3,030</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">19</span><span class="deal-name">St. Louis Children's hospital Young Athlete Center</span><span class="deal-amt">$2,500</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">5</span><span class="deal-name">VA Palo Alto Campus</span><span class="deal-amt">$645</span><span class="deal-badge badge-open">Open</span></div>
         </div>
       </div>
 
-      <!-- GROUP 5: Schools -->
+      <!-- GROUP 6 -->
       <div class="card" style="margin-bottom: 20px; border-left: 3px solid var(--red);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-          <h3 style="font-size: 16px;">Group 5: Schools (DPT, MSAT, PTA Programs)</h3>
-          <span style="background: var(--red); color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">0% Close</span>
+        <div class="seg-toggle" onclick="toggleDeals('g6')">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <h3 style="font-size: 16px;"><span class="seg-arrow" id="arrow-g6">&#9654;</span>Group 6: Schools (DPT, MSAT, PTA)</h3>
+            <span style="background: var(--red); color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">0% Close (0W/1L)</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 14px;">Extremely long cycle. Largest pipeline: 14 open deals, ~$98K ARR. Click to expand deals.</p>
         </div>
-        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">Extremely long sales cycle. High potential and clear need, but budget/fiscal year/proof-of-concept barriers are outside our control.</p>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
           <div>
             <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Product Gaps</h4>
             <ul style="padding-left: 16px; font-size: 14px; color: var(--text-muted);">
               <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Content only ortho/sports</strong> -- no peds, neuro, cardiopulm</li>
-              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Custom content uploads</strong> -- faculty want to upload their own; they all teach differently</li>
-              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Upload own > request an exercise</strong> -- requesting is too slow for academic workflows</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Custom content uploads</strong> -- faculty teach differently</li>
+              <li style="margin-bottom: 6px;"><strong style="color: var(--text);">Upload own &gt; request an exercise</strong></li>
             </ul>
-            <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--red); margin-top: 16px; margin-bottom: 8px;">Outside Our Control</h4>
+            <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--red); margin-top: 14px; margin-bottom: 8px;">Outside Our Control</h4>
             <ul style="padding-left: 16px; font-size: 14px; color: var(--text-muted);">
-              <li style="margin-bottom: 6px;">Proof of concept & implementation strategy</li>
-              <li style="margin-bottom: 6px;">Fiscal year -- long budget cycles</li>
-              <li style="margin-bottom: 6px;">Budget allocation decisions</li>
+              <li style="margin-bottom: 4px;">Proof of concept &amp; implementation strategy</li>
+              <li style="margin-bottom: 4px;">Fiscal year -- long budget cycles</li>
+              <li style="margin-bottom: 4px;">Budget allocation</li>
             </ul>
           </div>
           <div>
             <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 8px;">Close Rate Impact If Fixed</h4>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px;"><span>Custom Content Uploads</span><span style="color: var(--text-muted);">TBD</span></div>
-                <div style="background: var(--border); border-radius: 4px; height: 8px;"><div style="width: 0%; height: 100%; background: var(--accent); border-radius: 4px;"></div></div>
-              </div>
-            </div>
-            <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">Impact percentages pending -- Craig to provide</p>
+            <div class="gap-bar-row"><span class="gap-label">Custom Content Uploads</span><div class="gap-bar-track"><div class="gap-bar-fill" style="width:0%;background:var(--accent);"></div></div><span class="gap-pct" style="color:var(--text-muted);">TBD</span></div>
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 8px;">Impact percentages pending</p>
           </div>
+        </div>
+
+        <div class="seg-deals" id="deals-g6">
+          <div class="deal-section-header" style="color:var(--red);">Lost (1) -- $5,050 ARR</div>
+          <div class="deal-row"><span class="deal-seats">39</span><span class="deal-name">Pacific Northwest University DPT 1 cohort</span><span class="deal-amt">$5,050</span><span class="deal-badge badge-lost">Lost</span></div>
+          <div class="deal-section-header" style="color:var(--accent);">Open Pipeline (14) -- $97,590 ARR</div>
+          <div class="deal-row"><span class="deal-seats">184</span><span class="deal-name">USC DPT 3 cohorts</span><span class="deal-amt">$23,700</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">92</span><span class="deal-name">George Fox DPT</span><span class="deal-amt">$11,850</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">61</span><span class="deal-name">South College DPT</span><span class="deal-amt">$7,900</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">59</span><span class="deal-name">San Diego Mesa College PTA</span><span class="deal-amt">$7,575</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">59</span><span class="deal-name">Harrisburg University DPT program</span><span class="deal-amt">$7,575</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">39</span><span class="deal-name">Pacific U DPT 1 cohort</span><span class="deal-amt">$5,050</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">39</span><span class="deal-name">University of Hartford DPT</span><span class="deal-amt">$5,050</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">39</span><span class="deal-name">University of St. Augustine FL DPT</span><span class="deal-amt">$5,050</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">39</span><span class="deal-name">San Diego State University (SDSU) DPT 1 cohort</span><span class="deal-amt">$5,050</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">39</span><span class="deal-name">UNLV DPT 1 cohort</span><span class="deal-amt">$5,050</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">39</span><span class="deal-name">OIT/OHSU DPT program</span><span class="deal-amt">$5,050</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">31</span><span class="deal-name">High Point University DPT</span><span class="deal-amt">$3,950</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">18</span><span class="deal-name">UT MSAT program</span><span class="deal-amt">$2,370</span><span class="deal-badge badge-open">Open</span></div>
+          <div class="deal-row"><span class="deal-seats">18</span><span class="deal-name">Mount Saint Mary's University DPT</span><span class="deal-amt">$2,370</span><span class="deal-badge badge-open">Open</span></div>
         </div>
       </div>
 
@@ -990,78 +1102,89 @@
       <div class="card" style="border-left: 3px solid var(--accent);">
         <h3 style="font-size: 16px; margin-bottom: 16px;">Cross-Cutting Product Gaps</h3>
         <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">Features that unlock multiple segments simultaneously -- highest ROI for product investment.</p>
-        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 13px; min-width: 700px;">
           <thead>
             <tr style="border-bottom: 1px solid var(--border); text-align: left;">
               <th style="padding: 10px 12px; color: var(--text-muted); font-weight: 500;">Feature</th>
-              <th style="padding: 10px 8px; text-align: center; font-size: 11px;">G1<br>Clinics</th>
-              <th style="padding: 10px 8px; text-align: center; font-size: 11px;">G2<br>AT Depts</th>
-              <th style="padding: 10px 8px; text-align: center; font-size: 11px;">G3<br>PT Chains</th>
-              <th style="padding: 10px 8px; text-align: center; font-size: 11px;">G4<br>Hospital</th>
-              <th style="padding: 10px 8px; text-align: center; font-size: 11px;">G5<br>Schools</th>
+              <th style="padding: 10px 6px; text-align: center; font-size: 10px;">G1<br>Small</th>
+              <th style="padding: 10px 6px; text-align: center; font-size: 10px;">G2<br>Med</th>
+              <th style="padding: 10px 6px; text-align: center; font-size: 10px;">G3<br>AT</th>
+              <th style="padding: 10px 6px; text-align: center; font-size: 10px;">G4<br>PT</th>
+              <th style="padding: 10px 6px; text-align: center; font-size: 10px;">G5<br>Hosp</th>
+              <th style="padding: 10px 6px; text-align: center; font-size: 10px;">G6<br>School</th>
             </tr>
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid var(--border);">
               <td style="padding: 10px 12px;">Custom Video Uploads</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+15%</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+10%</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+20%</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+20%</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--accent);">Key</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--yellow);">+15%</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--yellow);">+15%</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--yellow);">+10%</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--green);">+20%</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--green);">+20%</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--accent);">Key</td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border);">
               <td style="padding: 10px 12px;">Groups / Patients Tab</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+15%</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+20%</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--yellow);">+15%</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--yellow);">+15%</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--yellow);">+15%</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--yellow);">+15%</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--green);">+20%</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--yellow);">+15%</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--yellow);">+15%</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border);">
               <td style="padding: 10px 12px;">EMR / Epic / AMS Integration</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--yellow);">+10%</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+20%</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+50%</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+50%</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--yellow);">+10%</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--yellow);">+15%</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--green);">+20%</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--green);">+50%</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--green);">+50%</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border);">
               <td style="padding: 10px 12px;">CEUs</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+20%</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--green);">+25%</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--green);">+20%</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--green);">+25%</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border);">
               <td style="padding: 10px 12px;">Custom Branding</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--yellow);">+10%</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--yellow);">+10%</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border);">
               <td style="padding: 10px 12px;">Shared Patients / Templates</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--yellow);">+15%</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--yellow);">+15%</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
             </tr>
             <tr>
-              <td style="padding: 10px 12px;">Content Breadth (beyond ortho/sports)</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--text-muted);">--</td>
-              <td style="padding: 10px 8px; text-align: center; color: var(--accent);">Key</td>
+              <td style="padding: 10px 12px;">Content Breadth (beyond ortho)</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--text-muted);">--</td>
+              <td style="padding: 10px 6px; text-align: center; color: var(--accent);">Key</td>
             </tr>
           </tbody>
         </table>
+        </div>
       </div>
     </section>
+
 
   </div>
 </div>
@@ -1091,6 +1214,18 @@
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
+
+  // Toggle deal lists
+  function toggleDeals(id) {
+    const deals = document.getElementById('deals-' + id);
+    const arrow = document.getElementById('arrow-' + id);
+    if (deals) {
+      deals.classList.toggle('open');
+    }
+    if (arrow) {
+      arrow.classList.toggle('open');
+    }
+  }
 </script>
 
 </body>
