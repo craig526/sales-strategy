@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prehab Professional -- Sales Strategy</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d27;
+    --card-hover: #222632;
+    --border: #2a2e3a;
+    --text: #e1e4ea;
+    --text-muted: #8b90a0;
+    --accent: #6c8cff;
+    --green: #34d399;
+    --red: #f87171;
+    --yellow: #fbbf24;
+    --orange: #fb923c;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Layout */
+  .layout { display: flex; min-height: 100vh; }
+  .sidebar {
+    width: 260px;
+    background: var(--card);
+    border-right: 1px solid var(--border);
+    padding: 24px 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 10;
+  }
+  .sidebar-brand {
+    padding: 0 24px 24px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 16px;
+  }
+  .sidebar-brand h1 { font-size: 18px; font-weight: 700; letter-spacing: -0.3px; }
+  .sidebar-brand p { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+  .sidebar nav { padding: 0 12px; }
+  .sidebar nav a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--text-muted);
+    transition: all 0.15s;
+  }
+  .sidebar nav a:hover, .sidebar nav a.active {
+    background: var(--card-hover);
+    color: var(--text);
+    text-decoration: none;
+  }
+  .sidebar nav .section-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    padding: 16px 12px 6px;
+    font-weight: 600;
+  }
+
+  .main { margin-left: 260px; flex: 1; padding: 48px; max-width: 1100px; }
+  .main > section { margin-bottom: 64px; }
+
+  /* Typography */
+  h2 { font-size: 28px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.5px; }
+  h3 { font-size: 20px; font-weight: 600; margin-bottom: 12px; letter-spacing: -0.3px; }
+  h4 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+  .subtitle { color: var(--text-muted); font-size: 14px; margin-bottom: 32px; }
+  p { margin-bottom: 12px; }
+
+  /* Cards */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  /* KPI Cards */
+  .kpi { text-align: center; padding: 20px; }
+  .kpi .value { font-size: 32px; font-weight: 700; }
+  .kpi .label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+  .kpi .target { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+  .kpi.green .value { color: var(--green); }
+  .kpi.red .value { color: var(--red); }
+  .kpi.yellow .value { color: var(--yellow); }
+
+  /* Status dots */
+  .status { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; flex-shrink: 0; }
+  .status.green { background: var(--green); }
+  .status.red { background: var(--red); }
+  .status.yellow { background: var(--yellow); }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--border); color: var(--text-muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:hover td { background: var(--card-hover); }
+  .amount { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .tag.inbound { background: #1e3a5f; color: #93c5fd; }
+  .tag.warm { background: #3b2f1a; color: var(--orange); }
+  .tag.cold { background: #3b1a1a; color: var(--red); }
+  .tag.referral { background: #1a3b2f; color: var(--green); }
+
+  /* Trend cards */
+  .trend {
+    border-left: 3px solid var(--accent);
+    padding-left: 16px;
+    margin-bottom: 20px;
+  }
+  .trend h4 { margin-bottom: 4px; }
+  .trend .deals { font-size: 13px; color: var(--text-muted); margin-bottom: 6px; }
+  .trend ul { padding-left: 18px; font-size: 14px; }
+  .trend li { margin-bottom: 4px; color: var(--text-muted); }
+
+  /* Bar chart */
+  .bar-chart { margin: 16px 0; }
+  .bar-row { display: flex; align-items: center; margin-bottom: 8px; }
+  .bar-label { width: 180px; font-size: 13px; flex-shrink: 0; }
+  .bar-track { flex: 1; height: 28px; background: var(--card-hover); border-radius: 4px; position: relative; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 10px; font-size: 12px; font-weight: 600; transition: width 0.8s ease; }
+  .bar-value { width: 80px; text-align: right; font-size: 13px; font-weight: 600; padding-left: 12px; flex-shrink: 0; }
+
+  /* Collapsible */
+  details { margin-bottom: 8px; }
+  details summary {
+    cursor: pointer;
+    padding: 12px 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::before { content: '\25B6'; font-size: 10px; transition: transform 0.2s; }
+  details[open] summary::before { transform: rotate(90deg); }
+  details[open] summary { border-radius: 8px 8px 0 0; border-bottom: none; }
+  details .detail-body {
+    padding: 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    font-size: 14px;
+  }
+
+  /* TLDR callout */
+  .tldr {
+    background: linear-gradient(135deg, #1e293b, #1a1d27);
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 32px;
+  }
+  .tldr h3 { color: var(--accent); margin-bottom: 16px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+  .tldr ul { padding-left: 0; list-style: none; }
+  .tldr li { margin-bottom: 14px; padding-left: 20px; position: relative; font-size: 15px; line-height: 1.7; }
+  .tldr li::before { content: ''; position: absolute; left: 0; top: 10px; width: 8px; height: 8px; background: var(--accent); border-radius: 2px; }
+
+  /* Progress ring */
+  .progress-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .progress-bar-mini { flex: 1; height: 6px; background: var(--card-hover); border-radius: 3px; overflow: hidden; }
+  .progress-bar-mini .fill { height: 100%; border-radius: 3px; }
+  .progress-label { font-size: 13px; width: 200px; flex-shrink: 0; }
+  .progress-pct { font-size: 13px; font-weight: 600; width: 50px; text-align: right; flex-shrink: 0; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .sidebar { display: none; }
+    .main { margin-left: 0; padding: 24px; }
+    .card-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .card-grid { grid-template-columns: 1fr; }
+    table { font-size: 13px; }
+    td, th { padding: 8px 6px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <h1>[P]rehab Professional</h1>
+      <p>Sales Strategy -- Living Doc</p>
+    </div>
+    <nav>
+      <div class="section-label">April 2026</div>
+      <a href="#tldr" class="active">TL;DR</a>
+      <a href="#okr-scorecard">OKR Scorecard</a>
+      <a href="#deal-loss">Deal Loss Analysis</a>
+      <a href="#product-gaps">Product Gaps</a>
+      <a href="#key-trends">Key Trends</a>
+      <a href="#reflection">Reflection & Pivot</a>
+      <div class="section-label">May 2026</div>
+      <a href="#may-priorities">Work To Be Done</a>
+      <a href="#leadership-update">Leadership Update</a>
+      <div class="section-label">Strategy</div>
+      <a href="#customer-profiles">Customer Profiles</a>
+    </nav>
+  </aside>
+
+  <!-- Main -->
+  <div class="main">
+
+    <!-- HEADER -->
+    <section id="tldr">
+      <h2>April 2026 Sales Recap</h2>
+      <p class="subtitle">Q2 Month 1 -- Week 1 through Week 4 (April 1 -- April 30)</p>
+
+      <div class="tldr">
+        <h3>TL;DR</h3>
+        <ul>
+          <li><strong>Top-of-funnel is exceptional, conversion is the bottleneck.</strong> 46 deals generated (184% of target), 48 demos completed (145% of target), 64 qualified leads -- but only $5,997 closed (12% of $50K goal). Avg deal size $500. We're winning small clinics/ATCs, not enterprise.</li>
+          <li><strong>Product gaps cost us 3x what we closed.</strong> 12 of 13 lost deals had demo calls -- the product gets in front of the right people and loses at conversion. $17,358 in lost ARR driven by: integration/API needs ($5.9K), content beyond ortho/sports ($6.2K), and MedBridge switching costs ($2.2K). If product-gap losses converted, KR 1.1 would be at 38% instead of 12%. Sales will continue to help inform product roadmap to eliminate the top 3 deal-killing gaps (integrations, content breadth, custom video uploads).</li>
+          <li><strong>May pivot: focus on deals we can win now + GTM Patients & Teams launch.</strong> School and enterprise deals require time + pilots and won't close this quarter. Sales shifting to close group customer profiles that we can win now.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- OKR SCORECARD -->
+    <section id="okr-scorecard">
+      <h2>April OKR Scorecard</h2>
+      <p class="subtitle">Q2 2026 Key Results -- April performance (month 1 of 3)</p>
+
+      <div class="card-grid">
+        <div class="card kpi red">
+          <div class="value">$5,997</div>
+          <div class="label">KR 1.1 -- New Biz ARR</div>
+          <div class="target">12% of $50K goal</div>
+        </div>
+        <div class="card kpi green">
+          <div class="value">46</div>
+          <div class="label">KR 1.2 -- Deals Generated</div>
+          <div class="target">184% of 25/mo target</div>
+        </div>
+        <div class="card kpi green">
+          <div class="value">48</div>
+          <div class="label">KR 1.3 -- Demo Calls</div>
+          <div class="target">145% of 33/mo target</div>
+        </div>
+        <div class="card kpi red">
+          <div class="value">48%</div>
+          <div class="label">Close Rate</div>
+          <div class="target">Target >70%</div>
+        </div>
+        <div class="card kpi green">
+          <div class="value">64</div>
+          <div class="label">Qualified Leads</div>
+          <div class="target">Target 40+/mo</div>
+        </div>
+        <div class="card kpi red">
+          <div class="value">96%</div>
+          <div class="label">KR 1.4 -- Group NDR</div>
+          <div class="target">Target >100%</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4>Full KR Status</h4>
+        <div style="margin-top: 16px;">
+          <div class="progress-row">
+            <span class="progress-label"><span class="status red"></span>KR 1.1 New Biz ARR</span>
+            <div class="progress-bar-mini"><div class="fill" style="width: 12%; background: var(--red);"></div></div>
+            <span class="progress-pct" style="color: var(--red);">12%</span>
+          </div>
+          <div class="progress-row">
+            <span class="progress-label"><span class="status green"></span>KR 1.2 Deals Generated</span>
+            <div class="progress-bar-mini"><div class="fill" style="width: 61%; background: var(--green);"></div></div>
+            <span class="progress-pct" style="color: var(--green);">61%</span>
+          </div>
+          <div class="progress-row">
+            <span class="progress-label"><span class="status green"></span>KR 1.3 Demo Calls</span>
+            <div class="progress-bar-mini"><div class="fill" style="width: 48%; background: var(--green);"></div></div>
+            <span class="progress-pct" style="color: var(--green);">48%</span>
+          </div>
+          <div class="progress-row">
+            <span class="progress-label"><span class="status red"></span>KR 1.4 Group NDR</span>
+            <div class="progress-bar-mini"><div class="fill" style="width: 96%; background: var(--red);"></div></div>
+            <span class="progress-pct" style="color: var(--red);">96%</span>
+          </div>
+          <div class="progress-row">
+            <span class="progress-label"><span class="status red"></span>KR 1.5 DPT Paying 100%</span>
+            <div class="progress-bar-mini"><div class="fill" style="width: 0%; background: var(--red);"></div></div>
+            <span class="progress-pct" style="color: var(--red);">0</span>
+          </div>
+          <div class="progress-row">
+            <span class="progress-label"><span class="status red"></span>KR 1.6 DPT on Platform</span>
+            <div class="progress-bar-mini"><div class="fill" style="width: 37%; background: var(--red);"></div></div>
+            <span class="progress-pct" style="color: var(--red);">37%</span>
+          </div>
+          <div class="progress-row">
+            <span class="progress-label"><span class="status green"></span>KR 1.7 ATC/PTA Advanced</span>
+            <div class="progress-bar-mini"><div class="fill" style="width: 100%; background: var(--green);"></div></div>
+            <span class="progress-pct" style="color: var(--green);">1</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Won Deals -->
+      <div class="card">
+        <h4>April Won Deals ($5,997 from 12 deals)</h4>
+        <table>
+          <thead><tr><th>Deal</th><th>ARR</th><th>Close Date</th></tr></thead>
+          <tbody>
+            <tr><td>Los Gatos Orthopedic Sports Therapy</td><td class="amount">$1,725</td><td>4/30</td></tr>
+            <tr><td>REV PT & Sports Medicine</td><td class="amount">$774</td><td>4/30</td></tr>
+            <tr><td>Prairie View A&M University Athletics</td><td class="amount">$774</td><td>4/30</td></tr>
+            <tr><td>Soar Physical Therapy</td><td class="amount">$516</td><td>4/24</td></tr>
+            <tr><td>Westmoore High School District</td><td class="amount">$516</td><td>4/10</td></tr>
+            <tr><td>Proactive Kinetics</td><td class="amount">$258</td><td>4/27</td></tr>
+            <tr><td>Optimal Performance PT</td><td class="amount">$258</td><td>4/27</td></tr>
+            <tr><td>Kathalynas Spine Sport & Rehab</td><td class="amount">$258</td><td>4/28</td></tr>
+            <tr><td>Auburn University Rec & Wellness</td><td class="amount">$258</td><td>4/8</td></tr>
+            <tr><td>Recon Perform (expansion)</td><td class="amount">$258</td><td>4/8</td></tr>
+            <tr><td>Renewed Physical Therapy</td><td class="amount">$258</td><td>4/7</td></tr>
+            <tr><td>Jay West Physical Therapy</td><td class="amount">$144</td><td>4/29</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- DEAL LOSS ANALYSIS -->
+    <section id="deal-loss">
+      <h2>April Deal Loss Analysis</h2>
+      <p class="subtitle">13 deals lost -- $17,358 in ARR (3x what was closed). 12 of 13 had demo calls.</p>
+
+      <div class="card-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="card kpi red">
+          <div class="value">$17,358</div>
+          <div class="label">Total Lost ARR</div>
+        </div>
+        <div class="card kpi yellow">
+          <div class="value">12/13</div>
+          <div class="label">Had Demo Calls</div>
+        </div>
+        <div class="card kpi" style="text-align:center;">
+          <div class="value" style="color: var(--accent);">38%</div>
+          <div class="label">KR 1.1 if product gaps solved</div>
+          <div class="target">vs 12% actual</div>
+        </div>
+      </div>
+
+      <div class="card" style="overflow-x: auto;">
+        <h4>All Lost Deals</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Deal</th>
+              <th>ARR</th>
+              <th>Source</th>
+              <th>Size</th>
+              <th>Demo?</th>
+              <th>Why We Lost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PNWU DPT</td>
+              <td class="amount">$5,050</td>
+              <td><span class="tag cold">Outbound - cold</span></td>
+              <td>25-99</td>
+              <td>Yes (3/16)</td>
+              <td>Too expensive + content too narrow for full DPT curriculum</td>
+            </tr>
+            <tr>
+              <td>Quinn Orthopedic PT</td>
+              <td class="amount">$3,232</td>
+              <td><span class="tag inbound">Inbound</span></td>
+              <td>25-99</td>
+              <td>Yes (3/11)</td>
+              <td>Needed API integration for corporate wellness partner</td>
+            </tr>
+            <tr>
+              <td>Promotion PT</td>
+              <td class="amount">$2,020</td>
+              <td><span class="tag warm">Outbound - warm</span></td>
+              <td>11-24</td>
+              <td>Yes (3/30)</td>
+              <td>Multi-site -- lacking integration and content</td>
+            </tr>
+            <tr>
+              <td>San Jose State ATC</td>
+              <td class="amount">$1,380</td>
+              <td><span class="tag warm">Outbound - warm</span></td>
+              <td>11-24</td>
+              <td>Yes (2/17)</td>
+              <td>No reason given</td>
+            </tr>
+            <tr>
+              <td>Amherst College ATC</td>
+              <td class="amount">$903</td>
+              <td><span class="tag cold">Outbound - cold</span></td>
+              <td>3-10</td>
+              <td>Yes (4/21)</td>
+              <td>Needs Dir of Sports Med buy-in -- champion not activated</td>
+            </tr>
+            <tr>
+              <td>Bentonville HS ATC</td>
+              <td class="amount">$774</td>
+              <td><span class="tag inbound">Inbound - campaign</span></td>
+              <td>3-10</td>
+              <td>Yes (3/19)</td>
+              <td>Preferred Prehab over MedBridge -- went silent</td>
+            </tr>
+            <tr>
+              <td>PT Solutions Georgia</td>
+              <td class="amount">$645</td>
+              <td><span class="tag inbound">Inbound</span></td>
+              <td>11-24</td>
+              <td>Yes (1/12)</td>
+              <td>Leadership not bought in -- too expensive</td>
+            </tr>
+            <tr>
+              <td>Duke Health <span style="color:var(--text-muted)">(30 staff)</span></td>
+              <td class="amount">$645</td>
+              <td><span class="tag inbound">Inbound - CSM</span></td>
+              <td>25-99</td>
+              <td>Yes (2/19)</td>
+              <td>Lacking integration / CEU / content to displace MedBridge</td>
+            </tr>
+            <tr>
+              <td>Evolve PT</td>
+              <td class="amount">$645</td>
+              <td><span class="tag referral">Outbound - referral</span></td>
+              <td>3-10</td>
+              <td>Yes (2/23)</td>
+              <td>Chose different software after trial</td>
+            </tr>
+            <tr>
+              <td>Coast PT <span style="color:var(--text-muted)">(3 locations)</span></td>
+              <td class="amount">$645</td>
+              <td><span class="tag cold">Outbound - cold</span></td>
+              <td>3-10</td>
+              <td>Yes (4/3)</td>
+              <td>Staying with MedBridge</td>
+            </tr>
+            <tr>
+              <td>Kimberly Salinas</td>
+              <td class="amount">$645</td>
+              <td><span class="tag cold">Outbound - cold</span></td>
+              <td>3-10</td>
+              <td>No</td>
+              <td>No engagement</td>
+            </tr>
+            <tr>
+              <td>Sports MedicTT</td>
+              <td class="amount">$516</td>
+              <td><span class="tag inbound">Inbound</span></td>
+              <td>3-10</td>
+              <td>Yes (3/2)</td>
+              <td>Loves product but lacks geriatric content</td>
+            </tr>
+            <tr>
+              <td>Pondera Rehab</td>
+              <td class="amount">$258</td>
+              <td><span class="tag inbound">Inbound</span></td>
+              <td>3-10</td>
+              <td>Yes (3/9)</td>
+              <td>MedBridge -- needs custom video uploads to switch</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- KR 1.1 Impact -->
+      <div class="card">
+        <h4>KR 1.1 Impact -- What If We Won These?</h4>
+        <div class="bar-chart">
+          <div class="bar-row">
+            <span class="bar-label">Actual (won only)</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 12%; background: var(--red);">12%</div></div>
+            <span class="bar-value">$5,997</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">+ product-gap losses</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 38%; background: var(--yellow);">38%</div></div>
+            <span class="bar-value">$19,008</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">If ALL 13 won</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 47%; background: var(--accent);">47%</div></div>
+            <span class="bar-value">$23,355</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label" style="color:var(--text-muted);">Q2 Goal</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 100%; background: var(--border);"></div></div>
+            <span class="bar-value" style="color:var(--text-muted);">$50,000</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- By source -->
+      <div class="card">
+        <h4>Lost ARR by Source</h4>
+        <table>
+          <thead><tr><th>Source</th><th>Deals</th><th>Lost ARR</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag inbound">Inbound</span></td><td>7</td><td class="amount">$6,814</td></tr>
+            <tr><td><span class="tag warm">Outbound - warm (current member)</span></td><td>2</td><td class="amount">$3,400</td></tr>
+            <tr><td><span class="tag cold">Outbound - cold</span></td><td>3</td><td class="amount">$6,340</td></tr>
+            <tr><td><span class="tag referral">Outbound - referral</span></td><td>1</td><td class="amount">$645</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PRODUCT GAPS -->
+    <section id="product-gaps">
+      <h2>Lost ARR by Product Gap</h2>
+      <p class="subtitle">Where the money went -- product issues that killed deals</p>
+
+      <div class="bar-chart card">
+        <div class="bar-row">
+          <span class="bar-label">Content breadth</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 72%; background: var(--red);">PNWU, MedicTT, Duke</div></div>
+          <span class="bar-value" style="color: var(--red);">$6,211</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Integration / API</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 68%; background: var(--orange);">Quinn, Duke, Promotion</div></div>
+          <span class="bar-value" style="color: var(--orange);">$5,897</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">DM buy-in failure</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 34%; background: var(--yellow);">PT Solutions, Amherst, SJSU</div></div>
+          <span class="bar-value" style="color: var(--yellow);">$2,928</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">MedBridge switching</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 25%; background: var(--accent);">Duke, Pondera, Coast, Evolve</div></div>
+          <span class="bar-value" style="color: var(--accent);">$2,193</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">No engagement</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 16%; background: var(--text-muted);">Bentonville, Salinas</div></div>
+          <span class="bar-value" style="color: var(--text-muted);">$1,419</span>
+        </div>
+      </div>
+
+      <div class="card" style="overflow-x:auto;">
+        <h4>What's Needed -- Product Roadmap Priorities</h4>
+        <table>
+          <thead><tr><th>Gap</th><th>Lost ARR</th><th>What to Build</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Content breadth</strong></td><td class="amount" style="color:var(--red);">$6,211</td><td>Content beyond ortho/sports -- geriatric, neuro, pelvic health -- to serve full clinics and DPT programs</td></tr>
+            <tr><td><strong>Integration / API</strong></td><td class="amount" style="color:var(--orange);">$5,897</td><td>EMR + platform integrations for multi-site and enterprise orgs (StriveHub, corporate wellness)</td></tr>
+            <tr><td><strong>Custom video uploads</strong></td><td class="amount" style="color:var(--yellow);">part of $2.2K</td><td>Let clinics upload their own exercise videos -- table stakes for MedBridge switchers</td></tr>
+            <tr><td><strong>CEU content</strong></td><td class="amount" style="color:var(--yellow);">part of $2.2K</td><td>Continuing education bundled with platform -- MedBridge's core retention hook</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- KEY TRENDS -->
+    <section id="key-trends">
+      <h2>Key Trends</h2>
+      <p class="subtitle">Patterns from April's lost deals and sales motion</p>
+
+      <div class="card">
+        <div class="trend" style="border-color: var(--red);">
+          <h4>1. MedBridge is the #1 competitor and switching cost is the moat</h4>
+          <div class="deals">4 deals: Duke, Pondera, Coast, Evolve -- $2,193 lost</div>
+          <ul>
+            <li>Duke Health (30 staff!): "lacking integration / CEU / content to displace MedBridge"</li>
+            <li>Pondera: "too much hassle to switch from MedBridge, need custom video uploads"</li>
+            <li>Coast PT (3 locations): "staying with MedBridge due to several factors"</li>
+            <li>Evolve PT: chose "different software" after trial</li>
+          </ul>
+        </div>
+
+        <div class="trend" style="border-color: var(--orange);">
+          <h4>2. Content gaps beyond ortho/sports are costing deals</h4>
+          <div class="deals">3 deals: Sports MedicTT, PNWU, Duke -- $6,211 lost</div>
+          <ul>
+            <li>Sports MedicTT: "lacks content tailored to geriatric population -- can't endorse for entire staff"</li>
+            <li>PNWU DPT: faculty said content too limited for full curriculum</li>
+            <li>Duke: content breadth insufficient vs MedBridge</li>
+          </ul>
+        </div>
+
+        <div class="trend" style="border-color: var(--yellow);">
+          <h4>3. Integration/API is a dealbreaker for larger orgs</h4>
+          <div class="deals">3 deals: Duke, Quinn, Promotion -- $5,897 lost</div>
+          <ul>
+            <li>Quinn Orthopedic (25 PTs): specifically wanted API for corporate wellness partner -- using StriveHub instead</li>
+            <li>Duke: "lacking integration" listed first in their reason</li>
+            <li>Promotion PT: multi-site, "lacking integration and content"</li>
+          </ul>
+        </div>
+
+        <div class="trend" style="border-color: var(--accent);">
+          <h4>4. Custom video upload is a specific, repeated ask</h4>
+          <div class="deals">2 deals: Pondera + implied by others</div>
+          <ul>
+            <li>Pondera explicitly lost because they can't upload their own exercise videos</li>
+            <li>This is table stakes for MedBridge switchers</li>
+          </ul>
+        </div>
+
+        <div class="trend" style="border-color: var(--green);">
+          <h4>5. Leadership/DM buy-in failure -- demos go well but don't reach the signer</h4>
+          <div class="deals">3 deals: PT Solutions, Amherst, PNWU -- $6,598 lost</div>
+          <ul>
+            <li>PT Solutions: "leadership decision -- not bought in" despite champion interest</li>
+            <li>Amherst: buyer is admin, needs Dir of Sports Med on a call -- never got three-way</li>
+            <li>PNWU: faculty feedback killed it after champion brought it to them</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFLECTION -->
+    <section id="reflection">
+      <h2>April Reflection</h2>
+      <p class="subtitle">Subjective + objective assessment</p>
+
+      <div class="card">
+        <h4>Subjective</h4>
+        <p>Feeling the sense of urgency to hit 1.1 OKR as we're off-track. High desire to improve product to eliminate reasons for deals not closing. Want to help with product roadmap & marketing's strategy for prehab-pro due to significant product awareness issue.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
+          <div>
+            <h4 style="color: var(--text-muted);">Headspace Split</h4>
+            <p>~33% strategy / 33% management / 33% execution. More time in execution due to increased calls and lead follow-up.</p>
+          </div>
+          <div>
+            <h4 style="color: var(--text-muted);">Ownership Split</h4>
+            <p>~80% sales, 15-20% supporting marketing/product/clinic/CS via lifecycle, social, & biz knowledge</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4>Objective</h4>
+        <ul style="padding-left: 18px;">
+          <li style="margin-bottom: 8px;">Key OKR (1.1) off track while leading indicators (1.2, 1.3) are doing well</li>
+          <li style="margin-bottom: 8px;">DPT programs of 100 is very hard to measure -- can only go off of leads vs. ClickHouse. Leads are moving slower. SME not delivering on what we hoped</li>
+          <li style="margin-bottom: 8px;">Close rate impacted by pipeline cleanup (8 stale deals closed-lost 4/30). Healthier pipeline going into May</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h4>Strategy Pivots for May</h4>
+        <ul style="padding-left: 18px;">
+          <li style="margin-bottom: 8px;"><strong>School & enterprise deals not likely to close this quarter</strong> & likely to require pilots. Sales needs to shift outreach/focus on groups we can win with now to help meet OKR 1.1</li>
+          <li style="margin-bottom: 8px;"><strong>GTM patients & teams</strong> effectiveness of product features / managed patients and self-serve marketing will determine team success -- sales + team sales will need to be bundled at EOQ to evaluate performance as it relates to OKR 1.1</li>
+          <li style="margin-bottom: 8px;"><strong>Environmental/Market factor:</strong> Federal student loan access for professional degrees -- PT no longer included starting July -- could impact DPT program budgets</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- MAY PRIORITIES -->
+    <section id="may-priorities">
+      <h2>May 2026 -- Work To Be Done</h2>
+      <p class="subtitle">Priorities for Q2 month 2</p>
+
+      <div class="card">
+        <ul style="padding-left: 18px; font-size: 15px;">
+          <li style="margin-bottom: 12px;">Sales OKR execution -- generate deals, complete demos, close groups on trial/trials expiring. Focus on lagging OKRs</li>
+          <li style="margin-bottom: 12px;">GTM Patients & Teams Launch -- current group implementation and Sales-led campaign to boost OKR 1.1 and team sales</li>
+          <li style="margin-bottom: 12px;">Support alignment of targeted group customer profiles & feature requests for the product roadmap</li>
+          <li style="margin-bottom: 12px;">USC industry partnership progression -- promising momentum from in-person meetings</li>
+          <li style="margin-bottom: 12px;">DPT/MSAT Implementation Playbook</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP UPDATE -->
+    <section id="leadership-update">
+      <h2>May Leadership Update</h2>
+      <p class="subtitle">#Leadership channel -- monthly update for cross-functional visibility</p>
+
+      <div class="card">
+        <h3 style="color: var(--accent); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">What's coming up next month that you need to plan around</h3>
+        <ul style="padding-left: 18px; font-size: 15px; margin-bottom: 24px;">
+          <li style="margin-bottom: 12px;"><strong>Sales-led Campaign for Prehab Professional GTM patients/teams tab</strong> -- need a clean product delivering on these features, a functioning self-serve sales page & checkout experience + creatives that outline the clinical workflow our platform caters to in order to build a lifecycle campaign with the goal = generate self-serve team sign-ups for current leads and failed leads to get successful early adoption</li>
+          <li style="margin-bottom: 12px;"><strong>Patients tab & team/shared templates & video content gaps including custom exercises are a top deal-killer</strong> -- 5 of 13 lost April deals cited missing features. Product needs to prioritize these + realigned product roadmap for me to close larger groups.</li>
+          <li style="margin-bottom: 12px;"><strong>USC industry partnership is advancing + DPT & MSAT program pipeline is growing fast</strong> -- expect product requests/suggestions to help with implementation of this customer profile</li>
+        </ul>
+
+        <h3 style="color: var(--accent); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">What I need from you</h3>
+        <ul style="padding-left: 18px; font-size: 15px; margin-bottom: 24px;">
+          <li style="margin-bottom: 12px;">Timeline for marketing website being LIVE for self-serve teams</li>
+          <li style="margin-bottom: 12px;">Clean Product Roadmap outlining May & June features to be developed/go-live</li>
+        </ul>
+
+        <h3 style="color: var(--accent); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">What I learned that helps you</h3>
+        <ul style="padding-left: 18px; font-size: 15px;">
+          <li style="margin-bottom: 12px;"><strong>Warm outreach (current individual members via OuterSignal) is our highest-converting lead source vs. inbound</strong> -- we have great brand awareness but bad Prehab Professional product awareness. Prehab Professional will not grow at our desired goals with our current performance/organic marketing efforts -- need to lean into improving product awareness.</li>
+          <li style="margin-bottom: 12px;"><strong>We have product gaps that are multi-layered affecting enterprise deals:</strong>
+            <ul style="margin-top: 8px;">
+              <li style="margin-bottom: 6px;"><em>How to get ruled in by decision makers?</em> Integrations, Con-ed support, shared patients / team view, team templates</li>
+              <li style="margin-bottom: 6px;"><em>How to get ruled in by product users (clinicians)?</em> Content -- does the platform have the videos I need? If not can I do custom exercises / video uploads? Can I find what I need? If not how can I relabel / better organize videos to personalize the library to me?</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CUSTOMER PROFILES (placeholder) -->
+    <section id="customer-profiles">
+      <h2>Customer Profiles</h2>
+      <p class="subtitle">Coming soon -- targeted group customer profiles, product gaps by persona, and win/loss patterns</p>
+
+      <div class="card" style="text-align: center; padding: 48px; color: var(--text-muted);">
+        <p style="font-size: 36px; margin-bottom: 16px;">&#128736;</p>
+        <p>This section will include customer profile segmentation, feature needs by persona, and tailored sales playbooks.</p>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script>
+  // Active nav tracking
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.sidebar nav a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -60% 0px' });
+
+  sections.forEach(section => observer.observe(section));
+
+  // Smooth scroll
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+
+</body>
+</html>
