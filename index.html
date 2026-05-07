@@ -1395,64 +1395,104 @@
       <h2>Pipeline Forecasting</h2>
       <p class="subtitle">Weighted pipeline by segment -- blended probability (80% deal stage + 20% historical close rate) -- updated from HubSpot</p>
 
-      <div class="card-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 24px;">
+      <div class="card-grid" style="grid-template-columns: repeat(5, 1fr); margin-bottom: 24px;">
+        <div class="card" style="text-align: center; padding: 20px;">
+          <p style="color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px;">Q2 Won</p>
+          <p style="font-size: 28px; font-weight: 700; color: var(--green);">$5,964</p>
+          <p style="color: var(--text-muted); font-size: 12px; margin-top: 4px;">15 deals closed-won</p>
+        </div>
+        <div class="card" style="text-align: center; padding: 20px;">
+          <p style="color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px;">Q2 Lost</p>
+          <p style="font-size: 28px; font-weight: 700; color: var(--red);">$17,616</p>
+          <p style="color: var(--text-muted); font-size: 12px; margin-top: 4px;">14 deals closed-lost</p>
+        </div>
         <div class="card" style="text-align: center; padding: 20px;">
           <p style="color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px;">Open Pipeline</p>
           <p style="font-size: 28px; font-weight: 700; color: var(--accent);">$222,739</p>
-          <p style="color: var(--text-muted); font-size: 12px; margin-top: 4px;">67 deals across 6 segments</p>
+          <p style="color: var(--text-muted); font-size: 12px; margin-top: 4px;">67 open deals</p>
         </div>
         <div class="card" style="text-align: center; padding: 20px;">
           <p style="color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px;">Weighted Pipeline</p>
-          <p style="font-size: 28px; font-weight: 700; color: var(--green);">$97,578</p>
+          <p style="font-size: 28px; font-weight: 700; color: var(--yellow);">$97,578</p>
           <p style="color: var(--text-muted); font-size: 12px; margin-top: 4px;">Blended probability-adjusted</p>
         </div>
         <div class="card" style="text-align: center; padding: 20px;">
-          <p style="color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px;">Q2 Forecast</p>
-          <p style="font-size: 28px; font-weight: 700; color: var(--yellow);">$33,368</p>
-          <p style="color: var(--text-muted); font-size: 12px; margin-top: 4px;">Expected by Jun 30 (excl DPT/MSAT)</p>
-        </div>
-        <div class="card" style="text-align: center; padding: 20px;">
-          <p style="color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px;">Avg Close Prob</p>
-          <p style="font-size: 28px; font-weight: 700; color: var(--accent);">44%</p>
-          <p style="color: var(--text-muted); font-size: 12px; margin-top: 4px;">Blended stage + historical</p>
+          <p style="color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px;">Q2 Total Expected</p>
+          <p style="font-size: 28px; font-weight: 700; color: var(--green);">$39,332</p>
+          <p style="color: var(--text-muted); font-size: 12px; margin-top: 4px;">Won + weighted open (excl DPT/MSAT)</p>
         </div>
       </div>
 
       <div class="card" style="margin-bottom: 24px;">
         <h3 style="font-size: 16px; margin-bottom: 4px;">Monthly Forecast</h3>
-        <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 16px;">Excludes 13 DPT/MSAT programs ($71,845 raw) -- low likelihood of closing in Q2</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 16px;">Excludes 13 DPT/MSAT programs ($71,845 raw) from open pipeline -- low likelihood of closing in Q2</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+              <h4 style="font-size: 14px; color: var(--accent);">April 2026</h4>
+              <span style="font-size: 20px; font-weight: 700; color: var(--green);">$5,046</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 12px;">Month complete</p>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span style="font-size: 11px; min-width: 110px; color: var(--green); font-weight: 600;">Won (12)</span>
+              <div style="flex: 1; background: var(--border); border-radius: 4px; height: 14px; overflow: hidden;">
+                <div style="width: 100%; height: 100%; background: var(--green); border-radius: 4px;"></div>
+              </div>
+              <span style="font-size: 11px; min-width: 55px; text-align: right; font-weight: 600;">$5,046</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span style="font-size: 11px; min-width: 110px; color: var(--red);">Lost (13)</span>
+              <div style="flex: 1; background: var(--border); border-radius: 4px; height: 14px; overflow: hidden;">
+                <div style="width: 100%; height: 100%; background: var(--red); border-radius: 4px; opacity: 0.5;"></div>
+              </div>
+              <span style="font-size: 11px; min-width: 55px; text-align: right; color: var(--red);">$17,358</span>
+            </div>
+          </div>
           <div>
             <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
               <h4 style="font-size: 14px; color: var(--accent);">May 2026</h4>
-              <span style="font-size: 20px; font-weight: 700; color: var(--green);">$14,973</span>
+              <span style="font-size: 20px; font-weight: 700; color: var(--green);">$15,891</span>
             </div>
-            <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 12px;">Weighted from $34,549 raw pipeline</p>
+            <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 12px;">Won + weighted from $34,549 open pipeline</p>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span style="font-size: 11px; min-width: 110px; color: var(--green); font-weight: 600;">Won (3)</span>
+              <div style="flex: 1; background: var(--border); border-radius: 4px; height: 14px; overflow: hidden;">
+                <div style="width: 5%; height: 100%; background: var(--green); border-radius: 4px;"></div>
+              </div>
+              <span style="font-size: 11px; min-width: 55px; text-align: right; font-weight: 600;">$918</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span style="font-size: 11px; min-width: 110px; color: var(--red);">Lost (1)</span>
+              <div style="flex: 1; background: var(--border); border-radius: 4px; height: 14px; overflow: hidden;">
+                <div style="width: 3%; height: 100%; background: var(--red); border-radius: 4px; opacity: 0.5;"></div>
+              </div>
+              <span style="font-size: 11px; min-width: 55px; text-align: right; color: var(--red);">$258</span>
+            </div>
             <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
               <span style="font-size: 11px; min-width: 110px; color: var(--text-muted);">G1: Small Clinics</span>
               <div style="flex: 1; background: var(--border); border-radius: 4px; height: 14px; overflow: hidden;">
-                <div style="width: 16%; height: 100%; background: var(--green); border-radius: 4px;"></div>
+                <div style="width: 15%; height: 100%; background: var(--green); border-radius: 4px;"></div>
               </div>
               <span style="font-size: 11px; min-width: 55px; text-align: right; font-weight: 600;">$2,481</span>
             </div>
             <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
               <span style="font-size: 11px; min-width: 110px; color: var(--text-muted);">G2: Medium Clinics</span>
               <div style="flex: 1; background: var(--border); border-radius: 4px; height: 14px; overflow: hidden;">
-                <div style="width: 22%; height: 100%; background: var(--green); border-radius: 4px;"></div>
+                <div style="width: 21%; height: 100%; background: var(--green); border-radius: 4px;"></div>
               </div>
               <span style="font-size: 11px; min-width: 55px; text-align: right; font-weight: 600;">$3,398</span>
             </div>
             <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
               <span style="font-size: 11px; min-width: 110px; color: var(--text-muted);">G3: Large AT Depts</span>
               <div style="flex: 1; background: var(--border); border-radius: 4px; height: 14px; overflow: hidden;">
-                <div style="width: 18%; height: 100%; background: var(--yellow); border-radius: 4px;"></div>
+                <div style="width: 17%; height: 100%; background: var(--yellow); border-radius: 4px;"></div>
               </div>
               <span style="font-size: 11px; min-width: 55px; text-align: right; font-weight: 600;">$2,818</span>
             </div>
             <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
               <span style="font-size: 11px; min-width: 110px; color: var(--text-muted);">G4: Large PT Chains</span>
               <div style="flex: 1; background: var(--border); border-radius: 4px; height: 14px; overflow: hidden;">
-                <div style="width: 26%; height: 100%; background: var(--yellow); border-radius: 4px;"></div>
+                <div style="width: 24%; height: 100%; background: var(--yellow); border-radius: 4px;"></div>
               </div>
               <span style="font-size: 11px; min-width: 55px; text-align: right; font-weight: 600;">$3,946</span>
             </div>
@@ -1476,7 +1516,7 @@
               <h4 style="font-size: 14px; color: var(--accent);">June 2026</h4>
               <span style="font-size: 20px; font-weight: 700; color: var(--green);">$18,395</span>
             </div>
-            <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 12px;">Weighted from $48,499 raw pipeline</p>
+            <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 12px;">Weighted from $48,499 open pipeline</p>
             <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
               <span style="font-size: 11px; min-width: 110px; color: var(--text-muted);">G1: Small Clinics</span>
               <div style="flex: 1; background: var(--border); border-radius: 4px; height: 14px; overflow: hidden;">
@@ -1628,16 +1668,28 @@
 
       <div class="card" style="border-left: 3px solid var(--green);">
         <h3 style="font-size: 16px; margin-bottom: 12px;">Q2 2026 Forecast Summary</h3>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
-          <div><p style="color: var(--text-muted); font-size: 12px; text-transform: uppercase; margin-bottom: 4px;">Q2 Raw Pipeline</p><p style="font-size: 22px; font-weight: 700;">$83,048</p><p style="color: var(--text-muted); font-size: 11px; margin-top: 2px;">Deals closing by Jun 30 (excl DPT/MSAT)</p></div>
-          <div><p style="color: var(--text-muted); font-size: 12px; text-transform: uppercase; margin-bottom: 4px;">Q2 Weighted Forecast</p><p style="font-size: 22px; font-weight: 700; color: var(--green);">$33,368</p><p style="color: var(--text-muted); font-size: 11px; margin-top: 2px;">Blended probability-adjusted</p></div>
-          <div><p style="color: var(--text-muted); font-size: 12px; text-transform: uppercase; margin-bottom: 4px;">Beyond Q2 + DPT/MSAT</p><p style="font-size: 22px; font-weight: 700; color: var(--orange);">$99,845</p><p style="color: var(--text-muted); font-size: 11px; margin-top: 2px;">Jul+ &amp; deferred programs ($211,536 raw)</p></div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px;">
+          <div><p style="color: var(--text-muted); font-size: 12px; text-transform: uppercase; margin-bottom: 4px;">Q2 Already Won</p><p style="font-size: 22px; font-weight: 700; color: var(--green);">$5,964</p><p style="color: var(--text-muted); font-size: 11px; margin-top: 2px;">15 deals closed in Q2</p></div>
+          <div><p style="color: var(--text-muted); font-size: 12px; text-transform: uppercase; margin-bottom: 4px;">Q2 Already Lost</p><p style="font-size: 22px; font-weight: 700; color: var(--red);">$17,616</p><p style="color: var(--text-muted); font-size: 11px; margin-top: 2px;">14 deals lost in Q2</p></div>
+          <div><p style="color: var(--text-muted); font-size: 12px; text-transform: uppercase; margin-bottom: 4px;">Weighted Open Pipeline</p><p style="font-size: 22px; font-weight: 700; color: var(--yellow);">$33,368</p><p style="color: var(--text-muted); font-size: 11px; margin-top: 2px;">Open deals closing by Jun 30</p></div>
+          <div style="background: rgba(74,248,144,0.06); border-radius: 10px; padding: 12px;"><p style="color: var(--text-muted); font-size: 12px; text-transform: uppercase; margin-bottom: 4px;">Q2 Total Expected</p><p style="font-size: 22px; font-weight: 700; color: var(--green);">$39,332</p><p style="color: var(--text-muted); font-size: 11px; margin-top: 2px;">Won + weighted open</p></div>
+        </div>
+        <div style="margin-top: 20px;">
+          <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px;">
+            <span>KR 1.1 Progress: $50K New Biz ARR</span>
+            <span style="color: var(--green); font-weight: 600;">$39,332 / $50,000 (79%)</span>
+          </div>
+          <div style="background: var(--border); border-radius: 6px; height: 28px; overflow: hidden; position: relative;">
+            <div style="width: 79%; height: 100%; background: rgba(74,248,144,0.15); border-radius: 6px; position: absolute;"></div>
+            <div style="width: 12%; height: 100%; background: var(--green); border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 11px; font-weight: 600; color: #0f1117; position: relative;">$5,964 won</div>
+          </div>
+          <p style="color: var(--text-muted); font-size: 11px; margin-top: 6px;">Solid bar = already won &middot; Ghost bar = won + weighted open pipeline</p>
         </div>
         <div style="margin-top: 20px; overflow-x: auto;">
           <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
             <thead><tr style="border-bottom: 1px solid var(--border); text-align: left;">
               <th style="padding: 8px 12px; text-align: left; color: var(--text-muted); font-weight: 500;">Segment</th>
-              <th style="padding: 8px 8px; text-align: right; color: var(--text-muted); font-weight: 500;">Deals</th>
+              <th style="padding: 8px 8px; text-align: right; color: var(--text-muted); font-weight: 500;">Open</th>
               <th style="padding: 8px 8px; text-align: right; color: var(--text-muted); font-weight: 500;">May</th>
               <th style="padding: 8px 8px; text-align: right; color: var(--text-muted); font-weight: 500;">June</th>
               <th style="padding: 8px 8px; text-align: right; color: var(--text-muted); font-weight: 500;">Q2 Weighted</th>
