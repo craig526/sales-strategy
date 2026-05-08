@@ -1402,9 +1402,9 @@
       </div>
     </section>
 
-            <section id="pipeline-forecast">
+                <section id="pipeline-forecast">
       <h2>Pipeline Forecasting</h2>
-      <p class="subtitle">Blended probability: 80% deal stage + 20% historical close rate. DPT/MSAT excluded from monthly forecasts.</p>
+      <p class="subtitle">Blended probability: 80% deal stage + 20% historical close rate. Schools excluded from weighted forecast (too speculative). DPT/MSAT excluded from monthly forecasts.</p>
 
       <!-- Summary Cards -->
       <div class="card-grid" style="grid-template-columns: repeat(5, 1fr); margin-bottom: 24px;">
@@ -1425,13 +1425,13 @@
         </div>
         <div class="card" style="text-align: center; padding: 16px;">
           <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 6px;">Weighted Pipeline</div>
-          <div style="font-size: 24px; font-weight: 700; color: var(--accent);">$96,823</div>
-          <div style="font-size: 12px; color: var(--text-muted);">blended probability</div>
+          <div style="font-size: 24px; font-weight: 700; color: var(--accent);">$47,441</div>
+          <div style="font-size: 12px; color: var(--text-muted);">excl schools</div>
         </div>
         <div class="card" style="text-align: center; padding: 16px;">
           <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 6px;">Q2 Total Expected</div>
-          <div style="font-size: 24px; font-weight: 700; color: var(--green);">$39,517</div>
-          <div style="font-size: 12px; color: var(--text-muted);">won + weighted Q2 open</div>
+          <div style="font-size: 24px; font-weight: 700; color: var(--green);">$35,037</div>
+          <div style="font-size: 12px; color: var(--text-muted);">won + weighted Q2</div>
         </div>
       </div>
 
@@ -1457,7 +1457,7 @@
           <div>
             <div style="text-align: center; margin-bottom: 12px;">
               <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);">May</div>
-              <div style="font-size: 20px; font-weight: 700; color: var(--accent); margin-top: 4px;">$14,521</div>
+              <div style="font-size: 20px; font-weight: 700; color: var(--accent); margin-top: 4px;">$14,174</div>
               <div style="font-size: 12px; color: var(--text-muted);">weighted / $34,291 raw</div>
               <div style="font-size: 13px; color: var(--green); margin-top: 4px;">$1,563 already won</div>
               <div style="font-size: 12px; color: var(--red);">$258 lost</div>
@@ -1521,10 +1521,10 @@
                     <div style="margin-bottom: 6px;">
                       <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 2px;">
                         <span>G6: Schools</span>
-                        <span>$346 / $387</span>
+                        <span>$387 (not weighted)</span>
                       </div>
                       <div style="background: var(--border); border-radius: 4px; height: 14px; overflow: hidden;">
-                        <div style="width: 1%; height: 100%; background: #c084fc; border-radius: 4px; opacity: 0.8;"></div>
+                        <div style="width: 1%; height: 100%; background: #c084fc; border-radius: 4px; opacity: 0.3;"></div>
                       </div>
                     </div>
             </div>
@@ -1532,7 +1532,7 @@
           <div>
             <div style="text-align: center; margin-bottom: 12px;">
               <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);">June</div>
-              <div style="font-size: 20px; font-weight: 700; color: var(--accent); margin-top: 4px;">$18,387</div>
+              <div style="font-size: 20px; font-weight: 700; color: var(--accent); margin-top: 4px;">$14,254</div>
               <div style="font-size: 12px; color: var(--text-muted);">weighted / $48,499 raw</div>
             </div>
             <div style="border-top: 1px solid var(--border); padding-top: 8px;">
@@ -1577,10 +1577,10 @@
                     <div style="margin-bottom: 6px;">
                       <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 2px;">
                         <span>G6: Schools</span>
-                        <span>$4,133 / $8,349</span>
+                        <span>$8,349 (not weighted)</span>
                       </div>
                       <div style="background: var(--border); border-radius: 4px; height: 14px; overflow: hidden;">
-                        <div style="width: 17%; height: 100%; background: #c084fc; border-radius: 4px; opacity: 0.8;"></div>
+                        <div style="width: 17%; height: 100%; background: #c084fc; border-radius: 4px; opacity: 0.3;"></div>
                       </div>
                     </div>
             </div>
@@ -1591,7 +1591,7 @@
       <!-- Pipeline by Segment -->
       <div class="card" style="margin-bottom: 16px;">
         <h3 style="font-size: 16px; margin-bottom: 4px;">Pipeline by Segment</h3>
-        <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 16px;">Ghost bar = raw pipeline, solid = weighted (blended probability)</p>
+        <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 16px;">Ghost bar = raw pipeline, solid = weighted. Schools shown as raw only (not weighted).</p>
         <div>
             <div style="margin-bottom: 14px;">
               <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 4px;">
@@ -1646,11 +1646,11 @@
             <div style="margin-bottom: 14px;">
               <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 4px;">
                 <span>G6: Schools (19 deals)</span>
-                <span>$49,382 / $99,354 <span style="color: var(--text-muted);">(89% hist)</span></span>
+                <span>$99,354 raw <span style="color: var(--text-muted);">(not weighted -- too speculative)</span></span>
               </div>
               <div style="position: relative; height: 20px; background: var(--border); border-radius: 4px; overflow: hidden;">
                 <div style="position: absolute; width: 100.0%; height: 100%; background: #c084fc; opacity: 0.25; border-radius: 4px;"></div>
-                <div style="position: absolute; width: 49.7%; height: 100%; background: #c084fc; border-radius: 4px;"></div>
+                
               </div>
             </div>
         </div>
@@ -1716,18 +1716,13 @@
         <div style="margin-bottom: 24px;">
           <div style="display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; margin-bottom: 8px;">
             <span style="font-weight: 600;">KR 1.1: Close $50K New Biz ARR</span>
-            <span style="font-size: 12px; color: var(--text-muted);">Projected: <span style="color: var(--accent); font-weight: 600;">$39,517</span> &mdash; Goal: <span style="color: var(--text); font-weight: 600;">$50,000</span></span>
+            <span style="font-size: 12px; color: var(--text-muted);">Projected: <span style="color: var(--accent); font-weight: 600;">$35,037</span> &mdash; Goal: <span style="color: var(--text); font-weight: 600;">$50,000</span></span>
           </div>
-          <!-- Layered bar: green = won, accent = projected pipeline, gray = remaining -->
           <div style="background: var(--border); border-radius: 8px; height: 40px; overflow: hidden; position: relative;">
-            <!-- Projected total (won + weighted) ghost bar -->
-            <div style="position: absolute; left: 0; top: 0; width: 79.0%; height: 100%; background: var(--accent); opacity: 0.25; border-radius: 8px;"></div>
-            <!-- Won (solid green) -->
+            <div style="position: absolute; left: 0; top: 0; width: 70.1%; height: 100%; background: var(--accent); opacity: 0.25; border-radius: 8px;"></div>
             <div style="position: absolute; left: 0; top: 0; width: 13.2%; height: 100%; background: var(--green); border-radius: 8px 0 0 8px;"></div>
-            <!-- Projected endpoint marker -->
-            <div style="position: absolute; left: 79.0%; top: 0; width: 2px; height: 100%; background: var(--accent);"></div>
+            <div style="position: absolute; left: 70.1%; top: 0; width: 2px; height: 100%; background: var(--accent);"></div>
           </div>
-          <!-- Labels below bar -->
           <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px;">
             <div>
               <span style="display: inline-block; width: 10px; height: 10px; background: var(--green); border-radius: 2px; margin-right: 4px; vertical-align: middle;"></span>
@@ -1736,18 +1731,18 @@
             </div>
             <div>
               <span style="display: inline-block; width: 10px; height: 10px; background: var(--accent); opacity: 0.4; border-radius: 2px; margin-right: 4px; vertical-align: middle;"></span>
-              <span style="color: var(--accent); font-weight: 600;">+$32,908 weighted pipeline</span>
-              <span style="color: var(--text-muted);"> (Q2, excl DPT/MSAT)</span>
+              <span style="color: var(--accent); font-weight: 600;">+$28,428 weighted pipeline</span>
+              <span style="color: var(--text-muted);"> (excl schools)</span>
             </div>
             <div style="color: var(--text-muted);">
-              $10,483 gap to goal
+              $14,963 gap to goal
             </div>
           </div>
         </div>
 
         <!-- Segment Breakdown Table -->
         <div style="margin-bottom: 20px;">
-          <h4 style="font-size: 13px; margin-bottom: 8px;">Weighted Forecast by Segment (excl DPT/MSAT)</h4>
+          <h4 style="font-size: 13px; margin-bottom: 8px;">Weighted Forecast by Segment</h4>
           <table style="width: 100%; border-collapse: collapse;">
             <thead>
               <tr style="border-bottom: 2px solid var(--border);">
@@ -1788,25 +1783,26 @@
                   <td style="padding: 6px 12px; border-bottom: 1px solid var(--border); font-size: 12px; text-align: right;">$9,600</td>
                   <td style="padding: 6px 12px; border-bottom: 1px solid var(--border); font-size: 12px; text-align: right; font-weight: 600;">$11,238</td>
                 </tr>
-                <tr>
-                  <td style="padding: 6px 12px; border-bottom: 1px solid var(--border); font-size: 12px;">G6: Schools</td>
-                  <td style="padding: 6px 12px; border-bottom: 1px solid var(--border); font-size: 12px; text-align: right;">$346</td>
-                  <td style="padding: 6px 12px; border-bottom: 1px solid var(--border); font-size: 12px; text-align: right;">$4,133</td>
-                  <td style="padding: 6px 12px; border-bottom: 1px solid var(--border); font-size: 12px; text-align: right; font-weight: 600;">$4,479</td>
+                <tr style="opacity: 0.5;">
+                  <td style="padding: 6px 12px; border-bottom: 1px solid var(--border); font-size: 12px;">G6: Schools *</td>
+                  <td style="padding: 6px 12px; border-bottom: 1px solid var(--border); font-size: 12px; text-align: right;">$387</td>
+                  <td style="padding: 6px 12px; border-bottom: 1px solid var(--border); font-size: 12px; text-align: right;">$8,349</td>
+                  <td style="padding: 6px 12px; border-bottom: 1px solid var(--border); font-size: 12px; text-align: right; font-weight: 600;">$8,736</td>
                 </tr>
-              <tr style="font-weight: 700;">
-                <td style="padding: 8px 12px; font-size: 13px;">Total</td>
-                <td style="padding: 8px 12px; font-size: 13px; text-align: right;">$14,521</td>
-                <td style="padding: 8px 12px; font-size: 13px; text-align: right;">$18,387</td>
-                <td style="padding: 8px 12px; font-size: 13px; text-align: right;">$32,908</td>
+              <tr style="font-weight: 700; border-top: 2px solid var(--border);">
+                <td style="padding: 8px 12px; font-size: 13px;">Total (weighted)</td>
+                <td style="padding: 8px 12px; font-size: 13px; text-align: right;">$14,174</td>
+                <td style="padding: 8px 12px; font-size: 13px; text-align: right;">$14,254</td>
+                <td style="padding: 8px 12px; font-size: 13px; text-align: right;">$28,428</td>
               </tr>
             </tbody>
           </table>
+          <p style="font-size: 11px; color: var(--text-muted); margin-top: 6px;">* Schools shown as raw deal value only -- not included in weighted totals.</p>
         </div>
 
         <!-- Beyond Q2 -->
         <div>
-          <h4 style="font-size: 13px; margin-bottom: 8px;">Beyond Q2 / DPT-MSAT (23 deals, $139,433 raw, $63,915 weighted)</h4>
+          <h4 style="font-size: 13px; margin-bottom: 8px;">Beyond Q2 / DPT-MSAT (23 deals, $139,433 raw, $19,011 weighted)</h4>
           <div style="max-height: 300px; overflow-y: auto;">
             <table style="width: 100%; border-collapse: collapse;">
               <thead>
@@ -1819,12 +1815,12 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr style="opacity: 0.5;">
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border);">USC DPT 3 cohorts</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">G6: Schools</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">2026-06-30</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$23,700</td>
-                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$11,732</td>
+                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">--</td>
                 </tr>
                 <tr>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border);">InMotion Physical Therapy yr 1 option 1</td>
@@ -1840,75 +1836,75 @@
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$20,000</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$6,400</td>
                 </tr>
-                <tr>
+                <tr style="opacity: 0.5;">
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border);">George Fox DPT</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">G6: Schools</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">2026-07-01</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$11,850</td>
-                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$5,866</td>
+                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">--</td>
                 </tr>
-                <tr>
+                <tr style="opacity: 0.5;">
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border);">South College DPT yr 1</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">G6: Schools</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">2026-06-30</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$7,900</td>
-                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$3,911</td>
+                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">--</td>
                 </tr>
-                <tr>
+                <tr style="opacity: 0.5;">
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border);">Harrisburg University DPT program yr 1</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">G6: Schools</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">2026-06-30</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$7,575</td>
-                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$3,750</td>
+                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">--</td>
                 </tr>
-                <tr>
+                <tr style="opacity: 0.5;">
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border);">Pacific U DPT 1 cohort</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">G6: Schools</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">2026-06-30</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$5,050</td>
-                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$2,500</td>
+                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">--</td>
                 </tr>
-                <tr>
+                <tr style="opacity: 0.5;">
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border);">University of Hartford DPT</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">G6: Schools</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">2026-06-30</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$5,050</td>
-                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$2,500</td>
+                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">--</td>
                 </tr>
-                <tr>
+                <tr style="opacity: 0.5;">
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border);">University of St. Augustine FL DPT</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">G6: Schools</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">2026-06-30</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$5,050</td>
-                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$2,500</td>
+                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">--</td>
                 </tr>
-                <tr>
+                <tr style="opacity: 0.5;">
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border);">San Diego State University (SDSU) DPT 1 </td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">G6: Schools</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">2026-06-30</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$5,050</td>
-                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$2,500</td>
+                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">--</td>
                 </tr>
-                <tr>
+                <tr style="opacity: 0.5;">
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border);">UNLV DPT 1 cohort</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">G6: Schools</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">2026-06-30</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$5,050</td>
-                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$2,500</td>
+                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">--</td>
                 </tr>
-                <tr>
+                <tr style="opacity: 0.5;">
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border);">OIT/OHSU DPT program yr 1</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">G6: Schools</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">2026-06-30</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$5,050</td>
-                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$2,500</td>
+                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">--</td>
                 </tr>
-                <tr>
+                <tr style="opacity: 0.5;">
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border);">High Point University DPT yr 1</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">G6: Schools</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">2026-09-30</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$3,950</td>
-                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$1,955</td>
+                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">--</td>
                 </tr>
                 <tr>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border);">University of Michigan Athletic Departme</td>
@@ -1924,19 +1920,19 @@
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$2,525</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$1,818</td>
                 </tr>
-                <tr>
+                <tr style="opacity: 0.5;">
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border);">UT MSAT program yr 1</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">G6: Schools</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">2026-08-31</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$2,370</td>
-                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$1,173</td>
+                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">--</td>
                 </tr>
-                <tr>
+                <tr style="opacity: 0.5;">
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border);">Mount Saint Mary's University DPT yr 1</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">G6: Schools</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">2026-06-30</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$2,370</td>
-                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$1,173</td>
+                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">--</td>
                 </tr>
                 <tr>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border);">Tennessee Orthopedics Alliance yr 1</td>
@@ -1966,19 +1962,19 @@
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$645</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$304</td>
                 </tr>
-                <tr>
+                <tr style="opacity: 0.5;">
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border);">Arlington ISD yr 5 expansion 6 pro-rated</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">G6: Schools</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">2026-08-31</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$345</td>
-                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$198</td>
+                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">--</td>
                 </tr>
-                <tr>
+                <tr style="opacity: 0.5;">
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border);">Mt Carmel High School yr 1</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">G6: Schools</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">2026-08-31</td>
                   <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$258</td>
-                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">$148</td>
+                  <td style="padding: 4px 8px; font-size: 11px; border-bottom: 1px solid var(--border); text-align: right;">--</td>
                 </tr>
               </tbody>
             </table>
